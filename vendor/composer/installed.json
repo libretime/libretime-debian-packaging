@@ -1,0 +1,849 @@
+[
+    {
+        "name": "aws/aws-sdk-php",
+        "version": "2.7.9",
+        "version_normalized": "2.7.9.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/aws/aws-sdk-php.git",
+            "reference": "f39354df58eec97f0ef22ccf3caf753607a47dca"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f39354df58eec97f0ef22ccf3caf753607a47dca",
+            "reference": "f39354df58eec97f0ef22ccf3caf753607a47dca",
+            "shasum": ""
+        },
+        "require": {
+            "guzzle/guzzle": "~3.7",
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "doctrine/cache": "~1.0",
+            "ext-openssl": "*",
+            "monolog/monolog": "~1.4",
+            "phpunit/phpunit": "~4.0",
+            "symfony/yaml": "~2.1"
+        },
+        "suggest": {
+            "doctrine/cache": "Adds support for caching of credentials and responses",
+            "ext-apc": "Allows service description opcode caching, request and response caching, and credentials caching",
+            "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages",
+            "monolog/monolog": "Adds support for logging HTTP requests and responses",
+            "symfony/yaml": "Eases the ability to write manifests for creating jobs in AWS Import/Export"
+        },
+        "time": "2014-12-08T21:56:46+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Aws": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Amazon Web Services",
+                "homepage": "http://aws.amazon.com"
+            }
+        ],
+        "description": "AWS SDK for PHP - Use Amazon Web Services in your PHP project",
+        "homepage": "http://aws.amazon.com/sdkforphp",
+        "keywords": [
+            "amazon",
+            "aws",
+            "cloud",
+            "dynamodb",
+            "ec2",
+            "glacier",
+            "s3",
+            "sdk"
+        ]
+    },
+    {
+        "name": "composer/semver",
+        "version": "1.4.2",
+        "version_normalized": "1.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/composer/semver.git",
+            "reference": "c7cb9a2095a074d131b65a8a0cd294479d785573"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/composer/semver/zipball/c7cb9a2095a074d131b65a8a0cd294479d785573",
+            "reference": "c7cb9a2095a074d131b65a8a0cd294479d785573",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.3.2 || ^7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.5 || ^5.0.5",
+            "phpunit/phpunit-mock-objects": "2.3.0 || ^3.0"
+        },
+        "time": "2016-08-30T16:08:34+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Composer\\Semver\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nils Adermann",
+                "email": "naderman@naderman.de",
+                "homepage": "http://www.naderman.de"
+            },
+            {
+                "name": "Jordi Boggiano",
+                "email": "j.boggiano@seld.be",
+                "homepage": "http://seld.be"
+            },
+            {
+                "name": "Rob Bast",
+                "email": "rob.bast@gmail.com",
+                "homepage": "http://robbast.nl"
+            }
+        ],
+        "description": "Semver library that offers utilities, version constraint parsing and validation.",
+        "keywords": [
+            "semantic",
+            "semver",
+            "validation",
+            "versioning"
+        ]
+    },
+    {
+        "name": "guzzle/guzzle",
+        "version": "v3.9.3",
+        "version_normalized": "3.9.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/guzzle3.git",
+            "reference": "0645b70d953bc1c067bbc8d5bc53194706b628d9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/0645b70d953bc1c067bbc8d5bc53194706b628d9",
+            "reference": "0645b70d953bc1c067bbc8d5bc53194706b628d9",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.3.3",
+            "symfony/event-dispatcher": "~2.1"
+        },
+        "replace": {
+            "guzzle/batch": "self.version",
+            "guzzle/cache": "self.version",
+            "guzzle/common": "self.version",
+            "guzzle/http": "self.version",
+            "guzzle/inflection": "self.version",
+            "guzzle/iterator": "self.version",
+            "guzzle/log": "self.version",
+            "guzzle/parser": "self.version",
+            "guzzle/plugin": "self.version",
+            "guzzle/plugin-async": "self.version",
+            "guzzle/plugin-backoff": "self.version",
+            "guzzle/plugin-cache": "self.version",
+            "guzzle/plugin-cookie": "self.version",
+            "guzzle/plugin-curlauth": "self.version",
+            "guzzle/plugin-error-response": "self.version",
+            "guzzle/plugin-history": "self.version",
+            "guzzle/plugin-log": "self.version",
+            "guzzle/plugin-md5": "self.version",
+            "guzzle/plugin-mock": "self.version",
+            "guzzle/plugin-oauth": "self.version",
+            "guzzle/service": "self.version",
+            "guzzle/stream": "self.version"
+        },
+        "require-dev": {
+            "doctrine/cache": "~1.3",
+            "monolog/monolog": "~1.0",
+            "phpunit/phpunit": "3.7.*",
+            "psr/log": "~1.0",
+            "symfony/class-loader": "~2.1",
+            "zendframework/zend-cache": "2.*,<2.3",
+            "zendframework/zend-log": "2.*,<2.3"
+        },
+        "suggest": {
+            "guzzlehttp/guzzle": "Guzzle 5 has moved to a new package name. The package you have installed, Guzzle 3, is deprecated."
+        },
+        "time": "2015-03-18T18:23:50+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.9-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Guzzle": "src/",
+                "Guzzle\\Tests": "tests/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            },
+            {
+                "name": "Guzzle Community",
+                "homepage": "https://github.com/guzzle/guzzle/contributors"
+            }
+        ],
+        "description": "PHP HTTP client. This library is deprecated in favor of https://packagist.org/packages/guzzlehttp/guzzle",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "client",
+            "curl",
+            "framework",
+            "http",
+            "http client",
+            "rest",
+            "web service"
+        ],
+        "abandoned": "guzzlehttp/guzzle"
+    },
+    {
+        "name": "ise/php-soundcloud",
+        "version": "3.0.1",
+        "version_normalized": "3.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/internalsystemerror/php-soundcloud.git",
+            "reference": "ac3ff2dce2a6e6d34636c58e66fd316d722c31df"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/internalsystemerror/php-soundcloud/zipball/ac3ff2dce2a6e6d34636c58e66fd316d722c31df",
+            "reference": "ac3ff2dce2a6e6d34636c58e66fd316d722c31df",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "time": "2014-02-03T15:49:00+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Soundcloud\\": "src/",
+                "SoundcloudTest\\": "tests/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Anton Lindqvist",
+                "email": "anton@qvister.se",
+                "homepage": "http://qvister.se/",
+                "role": "developer"
+            },
+            {
+                "name": "Gary Lockett",
+                "email": "ise@garylockett.com",
+                "homepage": "http://www.garylockett.com/"
+            }
+        ],
+        "description": "API Wrapper for SoundCloud written in PHP with support for authentication using OAuth 2.0 by Anton Lindqvist (mptre), composer support added by Gary Lockett (ise)",
+        "homepage": "https://github.com/internalsystemerror/php-soundcloud",
+        "keywords": [
+            "soundcloud"
+        ]
+    },
+    {
+        "name": "massivescale/celery-php",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/gjedeer/celery-php.git",
+            "reference": "609720abe0683ffd3c5d2dfc8a898a79b687f599"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/gjedeer/celery-php/zipball/609720abe0683ffd3c5d2dfc8a898a79b687f599",
+            "reference": "609720abe0683ffd3c5d2dfc8a898a79b687f599",
+            "shasum": ""
+        },
+        "require": {
+            "predis/predis": ">=0.8.5",
+            "videlalvaro/php-amqplib": ">=2.4.0"
+        },
+        "time": "2015-04-17T10:58:54+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "celery.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-2-Clause"
+        ],
+        "authors": [
+            {
+                "name": "GDR!",
+                "email": "info@massivescale.net",
+                "homepage": "http://massivescale.net/",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP client for Celery task queue",
+        "homepage": "https://github.com/gjedeer/celery-php/",
+        "keywords": [
+            "AMQP",
+            "celery",
+            "cron",
+            "python",
+            "queue",
+            "task"
+        ]
+    },
+    {
+        "name": "phing/phing",
+        "version": "2.12.0",
+        "version_normalized": "2.12.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phingofficial/phing.git",
+            "reference": "63a495a1f619b60404687a0a059039c5046677df"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phingofficial/phing/zipball/63a495a1f619b60404687a0a059039c5046677df",
+            "reference": "63a495a1f619b60404687a0a059039c5046677df",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.0"
+        },
+        "require-dev": {
+            "ext-pdo_sqlite": "*",
+            "lastcraft/simpletest": "@dev",
+            "pdepend/pdepend": "2.x",
+            "pear-pear.php.net/console_getopt": "~1.3.0",
+            "pear-pear.php.net/http_request2": "2.2.x",
+            "pear-pear.php.net/net_growl": "2.7.x",
+            "pear-pear.php.net/pear_packagefilemanager": "1.7.x",
+            "pear-pear.php.net/pear_packagefilemanager2": "1.0.x",
+            "pear-pear.php.net/xml_serializer": "0.20.x",
+            "pear/pear_exception": "~1.0",
+            "pear/versioncontrol_git": "@dev",
+            "pear/versioncontrol_svn": "~0.5",
+            "phpdocumentor/phpdocumentor": "2.x",
+            "phploc/phploc": "~2.0.6",
+            "phpmd/phpmd": "~2.2",
+            "phpunit/phpunit": ">=3.7",
+            "sebastian/git": "~1.0",
+            "sebastian/phpcpd": "2.x",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "suggest": {
+            "pdepend/pdepend": "PHP version of JDepend",
+            "pear/archive_tar": "Tar file management class",
+            "pear/versioncontrol_git": "A library that provides OO interface to handle Git repository",
+            "pear/versioncontrol_svn": "A simple OO-style interface for Subversion, the free/open-source version control system",
+            "phpdocumentor/phpdocumentor": "Documentation Generator for PHP",
+            "phploc/phploc": "A tool for quickly measuring the size of a PHP project",
+            "phpmd/phpmd": "PHP version of PMD tool",
+            "phpunit/php-code-coverage": "Library that provides collection, processing, and rendering functionality for PHP code coverage information",
+            "phpunit/phpunit": "The PHP Unit Testing Framework",
+            "sebastian/phpcpd": "Copy/Paste Detector (CPD) for PHP code",
+            "tedivm/jshrink": "Javascript Minifier built in PHP"
+        },
+        "time": "2015-08-24T21:02:12+00:00",
+        "bin": [
+            "bin/phing"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.11.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "classes/phing/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "include-path": [
+            "classes"
+        ],
+        "license": [
+            "LGPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Michiel Rook",
+                "email": "mrook@php.net"
+            },
+            {
+                "name": "Phing Community",
+                "homepage": "https://www.phing.info/trac/wiki/Development/Contributors"
+            }
+        ],
+        "description": "PHing Is Not GNU make; it's a PHP project build system or build tool based on Apache Ant.",
+        "homepage": "https://www.phing.info/",
+        "keywords": [
+            "build",
+            "phing",
+            "task",
+            "tool"
+        ]
+    },
+    {
+        "name": "php-amqplib/php-amqplib",
+        "version": "v2.6.3",
+        "version_normalized": "2.6.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-amqplib/php-amqplib.git",
+            "reference": "fa2f0d4410a11008cb36b379177291be7ee9e4f6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-amqplib/php-amqplib/zipball/fa2f0d4410a11008cb36b379177291be7ee9e4f6",
+            "reference": "fa2f0d4410a11008cb36b379177291be7ee9e4f6",
+            "shasum": ""
+        },
+        "require": {
+            "ext-bcmath": "*",
+            "ext-mbstring": "*",
+            "php": ">=5.3.0"
+        },
+        "replace": {
+            "videlalvaro/php-amqplib": "self.version"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8",
+            "scrutinizer/ocular": "^1.1",
+            "squizlabs/php_codesniffer": "^2.5"
+        },
+        "suggest": {
+            "ext-sockets": "Use AMQPSocketConnection"
+        },
+        "time": "2016-04-11T14:30:01+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PhpAmqpLib\\": "PhpAmqpLib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-2.1"
+        ],
+        "authors": [
+            {
+                "name": "Alvaro Videla",
+                "role": "Original Maintainer"
+            },
+            {
+                "name": "John Kelly",
+                "email": "johnmkelly86@gmail.com",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Raúl Araya",
+                "email": "nubeiro@gmail.com",
+                "role": "Maintainer"
+            }
+        ],
+        "description": "Formerly videlalvaro/php-amqplib.  This library is a pure PHP implementation of the AMQP protocol. It's been tested against RabbitMQ.",
+        "homepage": "https://github.com/php-amqplib/php-amqplib/",
+        "keywords": [
+            "message",
+            "queue",
+            "rabbitmq"
+        ]
+    },
+    {
+        "name": "predis/predis",
+        "version": "v1.0.3",
+        "version_normalized": "1.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nrk/predis.git",
+            "reference": "84060b9034d756b4d79641667d7f9efe1aeb8e04"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nrk/predis/zipball/84060b9034d756b4d79641667d7f9efe1aeb8e04",
+            "reference": "84060b9034d756b4d79641667d7f9efe1aeb8e04",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "suggest": {
+            "ext-curl": "Allows access to Webdis when paired with phpiredis",
+            "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+        },
+        "time": "2015-07-30T18:34:15+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Predis\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Daniele Alessandri",
+                "email": "suppakilla@gmail.com",
+                "homepage": "http://clorophilla.net"
+            }
+        ],
+        "description": "Flexible and feature-complete PHP client library for Redis",
+        "homepage": "http://github.com/nrk/predis",
+        "keywords": [
+            "nosql",
+            "predis",
+            "redis"
+        ]
+    },
+    {
+        "name": "propel/propel1",
+        "version": "1.7.0",
+        "version_normalized": "1.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/propelorm/Propel.git",
+            "reference": "09058f1443bc287e550b9342a4379aac2e0a0b8f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/propelorm/Propel/zipball/09058f1443bc287e550b9342a4379aac2e0a0b8f",
+            "reference": "09058f1443bc287e550b9342a4379aac2e0a0b8f",
+            "shasum": ""
+        },
+        "require": {
+            "phing/phing": "~2.4",
+            "php": ">=5.2.4"
+        },
+        "require-dev": {
+            "pear-pear.php.net/pear_packagefilemanager2": "@stable"
+        },
+        "time": "2013-10-21T12:52:56+00:00",
+        "bin": [
+            "generator/bin/propel-gen",
+            "generator/bin/propel-gen.bat"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "runtime/lib",
+                "generator/lib"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "include-path": [
+            "runtime/lib",
+            "generator/lib"
+        ],
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "William Durand",
+                "email": "william.durand1@gmail.com",
+                "homepage": "http://www.willdurand.fr"
+            }
+        ],
+        "description": "Propel is an open-source Object-Relational Mapping (ORM) for PHP5.",
+        "homepage": "http://www.propelorm.org/",
+        "keywords": [
+            "Active Record",
+            "database",
+            "mapping",
+            "orm",
+            "persistence"
+        ]
+    },
+    {
+        "name": "raven/raven",
+        "version": "0.12.0",
+        "version_normalized": "0.12.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/getsentry/raven-php.git",
+            "reference": "bd247ca2a8fd9ccfb99b60285c9b31286384a92b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/getsentry/raven-php/zipball/bd247ca2a8fd9ccfb99b60285c9b31286384a92b",
+            "reference": "bd247ca2a8fd9ccfb99b60285c9b31286384a92b",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.2.4"
+        },
+        "require-dev": {
+            "fabpot/php-cs-fixer": "^1.8.0",
+            "phpunit/phpunit": "^4.6.6"
+        },
+        "time": "2015-05-19T20:20:08+00:00",
+        "bin": [
+            "bin/raven"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.12.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Raven_": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD"
+        ],
+        "authors": [
+            {
+                "name": "David Cramer",
+                "email": "dcramer@gmail.com"
+            }
+        ],
+        "description": "A PHP client for Sentry (http://getsentry.com)",
+        "homepage": "http://getsentry.com",
+        "keywords": [
+            "log",
+            "logging"
+        ],
+        "abandoned": "sentry/sentry"
+    },
+    {
+        "name": "simplepie/simplepie",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/simplepie/simplepie.git",
+            "reference": "eb6dd2d578dd62a1eec68b60cdda8c4a38a8de49"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/simplepie/simplepie/zipball/3d628875ef6cda045b9a7df6ac509f73756670c6",
+            "reference": "eb6dd2d578dd62a1eec68b60cdda8c4a38a8de49",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4 || ~5"
+        },
+        "suggest": {
+            "mf2/mf2": "Microformat module that allows for parsing HTML for microformats"
+        },
+        "time": "2017-02-28T01:12:12+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "SimplePie": "library"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Ryan Parman",
+                "homepage": "http://ryanparman.com/",
+                "role": "Creator, alumnus developer"
+            },
+            {
+                "name": "Geoffrey Sneddon",
+                "homepage": "http://gsnedders.com/",
+                "role": "Alumnus developer"
+            },
+            {
+                "name": "Ryan McCue",
+                "email": "me@ryanmccue.info",
+                "homepage": "http://ryanmccue.info/",
+                "role": "Developer"
+            }
+        ],
+        "description": "A simple Atom/RSS parsing library for PHP",
+        "homepage": "http://simplepie.org/",
+        "keywords": [
+            "atom",
+            "feeds",
+            "rss"
+        ]
+    },
+    {
+        "name": "symfony/event-dispatcher",
+        "version": "v2.7.4",
+        "version_normalized": "2.7.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/event-dispatcher.git",
+            "reference": "b58c916f1db03a611b72dd702564f30ad8fe83fa"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/b58c916f1db03a611b72dd702564f30ad8fe83fa",
+            "reference": "b58c916f1db03a611b72dd702564f30ad8fe83fa",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/config": "~2.0,>=2.0.5",
+            "symfony/dependency-injection": "~2.6",
+            "symfony/expression-language": "~2.6",
+            "symfony/phpunit-bridge": "~2.7",
+            "symfony/stopwatch": "~2.3"
+        },
+        "suggest": {
+            "symfony/dependency-injection": "",
+            "symfony/http-kernel": ""
+        },
+        "time": "2015-08-24T07:13:45+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\EventDispatcher\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony EventDispatcher Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "zendframework/zendframework1",
+        "version": "1.12.20",
+        "version_normalized": "1.12.20.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/zf1.git",
+            "reference": "737ef159654fbbef37cf9af742b2c8f9690c2ece"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/zf1/zipball/737ef159654fbbef37cf9af742b2c8f9690c2ece",
+            "reference": "737ef159654fbbef37cf9af742b2c8f9690c2ece",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.11"
+        },
+        "require-dev": {
+            "phpunit/dbunit": "1.3.*",
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2016-09-08T14:50:34+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.12.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Zend_": "library/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "include-path": [
+            "library/"
+        ],
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "Zend Framework 1",
+        "homepage": "http://framework.zend.com/",
+        "keywords": [
+            "ZF1",
+            "framework"
+        ]
+    }
+]

@@ -1,0 +1,28 @@
+{
+    "name": "massivescale/celery-php",
+    "type": "library",
+    "description": "PHP client for Celery task queue",
+    "keywords": ["celery", "amqp", "task", "cron", "queue", "python"],
+    "homepage": "https://github.com/gjedeer/celery-php/",
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "GDR!",
+            "email": "info@massivescale.net",
+            "homepage": "http://massivescale.net/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+	"videlalvaro/php-amqplib": ">=2.4.0",
+        "predis/predis": "0.8.5"           
+    },
+    "autoload": {
+        "classmap": ["celery.php"]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
+    }
+}
