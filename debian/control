@@ -1,0 +1,106 @@
+Source: libretime
+Section: web
+Priority: optional
+Maintainer: Kyle Robbertze <krobbertze@gmail.com>
+Build-Depends: debhelper (>= 10), mkdocs, python
+Standards-Version: 4.1.3
+Homepage: https://libretime.org/
+Vcs-Git: https://github.com/LibreTime/libretime-debian-packaging
+Vcs-Browser: https://github.com/LibreTime/libretime-debian-packaging
+
+Package: libretime
+Architecture: any
+Depends: adduser,
+         apache2,
+         curl,
+         ecasound,
+         flac,
+         gstreamer1.0-plugins-ugly,
+         lame,
+         libapache2-mod-php7,
+         libao-ocaml,
+         libcamomile-ocaml-data,
+         libfaad2,
+         libjs-angularjs,
+         libjs-bootstrap,
+         libjs-dropzone,
+         libjs-eonasdan-bootstrap-datetimepicker,
+         libjs-jquery,
+         libjs-jquery-blockui,
+         libjs-jquery-colorpicker,
+         libjs-jquery-cookie,
+         libjs-jquery-datatables,
+         libjs-jquery-flot,
+         libjs-jquery-jplayer,
+         libjs-jquery-migrate-1,
+         libjs-jquery-timepicker,
+         libjs-jquery-ui,
+         libjs-jstimezonedetect,
+         libjs-moment,
+         libjs-moment-timezone,
+         libjs-plupload,
+         libjs-qtip2,
+         libjs-underscore,
+         libmad-ocaml,
+         libopus0,
+         libportaudio2,
+         libsamplerate0,
+         libsoundtouch-ocaml,
+         libtaglib-ocaml,
+         libvo-aacenc0,
+         liquidsoap,
+         lsb-release,
+         lsof,
+         mpg123,
+         node-sprintf-js,
+         patch,
+         php7.0,
+         php7.0-bcmath,
+         php7.0-curl,
+         php7.0-dev,
+         php7.0-gd,
+         php7.0-pgsql,
+         php7.0-mbstring,
+         php-apc,
+         php-amqplib,
+         php-pear,
+         pwgen,
+         python,
+         python-amqplib,
+         python-anyjson,
+         python-argh,
+         python-boto,
+         python-celery,
+         python-configobj,
+         python-daemon,
+         python-defusedxml,
+         python-docopt,
+         python-gst-1.0,
+         python-kombu,
+         python-libcloud,
+         python-magic,
+         python-mutagen,
+         python-pika,
+         python-poster,
+         python-pydispatch,
+         python-pyinotify,
+         python-requests,
+         python-rgain,
+         python-tz,
+         python-virtualenv,
+         vorbis-tools,
+         vobisgain,
+         zendframework,
+         ${misc:Depends}
+Suggests: icecast,
+          postgresql,
+          postgresql-client,
+          rabbitmq-server
+Description: online platform for hosting your own radio station
+ LibreTime is a web-based scheduling and playout platform that enables you to
+ run an online or terrestrial radio station. It is forked from Sourcefabric's
+ Airtime after development on that stalled.
+ .
+ Within LibreTime you can manage content, users and distribution all from your
+ web-browser. Shows allow you to schedule pre-recorded content as well as
+ broadcasting live from any incoming live-stream.

@@ -1,0 +1,54 @@
+#!/bin/bash
+set -e
+
+case "$1" in
+    configure|reconfigure)
+        if ! getent passwd libretime-playout > /dev/null ; then
+            echo 'Adding system user for Libretime Liquidsoap' 1>&2
+            adduser \
+                --system \
+                --quiet \
+                --home /nonexistant \
+                --no-create-home \
+                --group \
+                --gecos "LibreTime Liquidsoap" \
+                libretime-playout
+        fi
+        if ! getent passwd libretime-pypo > /dev/null ; then
+            echo 'Adding system user for Libretime Playout' 1>&2
+            adduser \
+                --system \
+                --quiet \
+                --home /nonexistant \
+                --no-create-home \
+                --group \
+                --gecos "LibreTime Playout" \
+                libretime-pypo
+        fi
+        if ! getent passwd airtime-analyzer > /dev/null ; then
+            echo 'Adding system user for Libretime Analyzer' 1>&2
+            adduser \
+                --system \
+                --quiet \
+                --home /nonexistant \
+                --no-create-home \
+                --group \
+                --gecos "LibreTime Analyzer" \
+                airtime-analyzer
+        fi
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+        exit 0
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0
+

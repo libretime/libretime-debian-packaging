@@ -1,0 +1,10 @@
+Document: libretime
+Title: LibreTime Manual
+Author: LibreTime contributors
+Abstract: This manual describes what LibreTime is and how
+ to run it.
+Section: Sound
+
+Format: HTML
+Index: /usr/share/doc/libretime/index.html
+Files: /usr/share/doc/libretime/*

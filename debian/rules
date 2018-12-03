@@ -1,0 +1,56 @@
+#!/usr/bin/make -f
+
+# TODO: find the build directory variable in debhelper, and use that here
+PYTHON_BUILDDIR?=../../debian/libretime
+PYTHON_INSTALL_FLAGS=--install-layout=deb --root=$(PYTHON_BUILDDIR)
+
+export PYTHONDONTWRITEBYTECODE=yes
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf build
+	rm -rf python_apps/airtime_analyzer/airtime_analyzer.egg-info
+	python python_apps/airtime_analyzer/setup.py clean --all
+	rm -rf python_apps/airtime-celery/airtime_celery.egg-info
+	python python_apps/airtime-celery/setup.py clean --all
+	rm -rf python_apps/api_clients/api_clients.egg-info
+	python python_apps/api_clients/setup.py clean --all
+	rm -rf python_apps/media-monitor/airtime_media_monitor.egg-info
+	python python_apps/media-monitor/setup.py clean --all
+	rm -rf python_apps/pypo/airtime_playout.egg-info
+	python python_apps/pypo/setup.py clean --all
+	rm -rf python_apps/std_err_override/std_err_override.egg-info
+	python python_apps/std_err_override/setup.py clean --all
+
+override_dh_auto_build:
+	dh_auto_build
+	python python_apps/airtime_analyzer/setup.py build
+	python python_apps/airtime-celery/setup.py build
+	python python_apps/api_clients/setup.py build
+	python python_apps/media-monitor/setup.py build
+	python python_apps/pypo/setup.py build
+	python python_apps/std_err_override/setup.py build
+
+override_dh_install:
+	dh_install
+	python python_apps/airtime_analyzer/setup.py install \
+		--no-init-script $(PYTHON_INSTALL_FLAGS)
+	python python_apps/airtime-celery/setup.py install \
+		--no-init-script $(PYTHON_INSTALL_FLAGS)
+	python python_apps/api_clients/setup.py install $(PYTHON_INSTALL_FLAGS)
+	python python_apps/media-monitor/setup.py install \
+		--no-init-script $(PYTHON_INSTALL_FLAGS)
+	python python_apps/pypo/setup.py install \
+		--no-init-script $(PYTHON_INSTALL_FLAGS)
+	python python_apps/std_err_override/setup.py install $(PYTHON_INSTALL_FLAGS)
+	# TODO: Rename airtime -> libretime upstream
+	# https://github.com/LibreTime/libretime/issues/420
+	mkdir -p debian/libretime/etc/airtime
+	cp airtime_mvc/build/airtime.example.conf debian/libretime/etc/airtime/airtime.conf
+
+override_dh_installdocs:
+	mkdocs build --quiet
+	dh_installdocs

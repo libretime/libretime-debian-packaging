@@ -1,0 +1,5 @@
+libretime (3.0.0-alpha.3+ds1-1) UNRELEASED; urgency=medium
+
+  * Initial release (Closes: #888687)
+
+ -- Kyle Robbertze <krobbertze@gmail.com>  Sun, 28 Jan 2018 20:04:34 +0100

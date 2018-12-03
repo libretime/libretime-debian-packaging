@@ -1,0 +1,47 @@
+airtime_mvc/application/* usr/share/libretime/www/application/
+airtime_mvc/build/* usr/share/libretime/www/build/
+airtime_mvc/locale/* usr/share/libretime/www/locale/
+
+airtime_mvc/public/airtime_logo.png usr/share/libretime/www/public
+airtime_mvc/public/css/* usr/share/libretime/www/public/css/
+airtime_mvc/public/favicon.ico usr/share/libretime/www/public
+airtime_mvc/public/fonts/* usr/share/libretime/www/public/fonts/
+airtime_mvc/public/images/* usr/share/libretime/www/public/images/
+airtime_mvc/public/index.php usr/share/libretime/www/public/
+airtime_mvc/public/install/* usr/share/libretime/www/public/install
+airtime_mvc/public/js/airtime/airtime_bootstrap.js usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/audiopreview usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/buttons usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/common/audioplaytest.js usr/share/libretime/www/public/js/airtime/common
+airtime_mvc/public/js/airtime/common/common.js usr/share/libretime/www/public/js/airtime/common
+airtime_mvc/public/js/airtime/common/livechat.js usr/share/libretime/www/public/js/airtime/common
+airtime_mvc/public/js/airtime/dashboard usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/library usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/listenerstat usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/login usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/nav usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/nowplaying usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/player usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/playlist usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/playouthistory usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/preferences usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/schedule usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/showbuilder usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/status usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/user usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/utilities usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/airtime/widgets usr/share/libretime/www/public/js/airtime
+airtime_mvc/public/js/setup/* usr/share/libretime/www/public/js/setup
+airtime_mvc/public/js/waveformplaylist/* usr/share/libretime/www/public/js/waveformplaylist
+airtime_mvc/public/robots.txt usr/share/libretime/www/public/
+airtime_mvc/public/setup/* usr/share/libretime/www/public/setup/
+airtime_mvc/public/soundcloud_callback.php usr/share/libretime/www/public/
+airtime_mvc/public/widgets/css/* usr/share/libretime/www/public/widgets/css/
+airtime_mvc/public/widgets/js/jquery.showinfo.js usr/share/libretime/www/public/widgets/js/
+airtime_mvc/public/widgets/sample_page.html usr/share/libretime/www/public/widgets/
+airtime_mvc/public/widgets/widget_schedule.html usr/share/libretime/www/public/widgets/
+airtime_mvc/public/widgets/widgets.html usr/share/libretime/www/public/widgets/
+
+python_apps/icecast2/airtime-icecast-status.xsl usr/share/icecast2/web/
+
+installer/systemd/*.service lib/systemd/system/
