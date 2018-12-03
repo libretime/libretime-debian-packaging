@@ -1,0 +1,4 @@
+version=4
+opts=\
+  filenamemangle=s/.+\/(\d\S+)\/// \
+  https://github.com/LibreTime/libretime/releases .*download/\d\S+/libretime-(\d\S+)\.tar\.gz

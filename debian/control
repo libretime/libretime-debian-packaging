@@ -1,0 +1,116 @@
+Source: libretime
+Section: web
+Priority: optional
+Maintainer: Kyle Robbertze <krobbertze@gmail.com>
+Build-Depends: debhelper (>= 9),
+               dh-python,
+               mkdocs,
+               python,
+               pyton-setuptools,
+               composer,
+               php7.0,
+               php7.0-curl,
+               php7.0-gd,
+               php7.0-pgsql,
+               php7.0-bcmath,
+               php7.0-mbstring,
+               php-amqplib,
+               php-apcu,
+               php-pear,
+Standards-Version: 4.1.3
+Homepage: https://libretime.org/
+Vcs-Git: https://github.com/LibreTime/libretime-debian-packaging
+Vcs-Browser: https://github.com/LibreTime/libretime-debian-packaging
+
+Package: libretime
+Architecture: any
+Depends: apache2,
+         curl,
+         ecasound,
+         flac,
+         gstreamer1.0-plugins-ugly,
+         icecast2,
+         lame,
+         libao-ocaml,
+         libapache2-mod-php7.0,
+         libcamomile-ocaml-data,
+         libfaad2,
+         libffi-dev,
+         libjs-jquery-migrate-1,
+         libmad-ocaml,
+         libopus0,
+         libportaudio2,
+         libpulse0,
+         libsamplerate0,
+         libsoundtouch-ocaml,
+         libssl-dev,
+         libtaglib-ocaml,
+         libvo-aacenc0,
+         liquidsoap,
+         liquidsoap-plugin-alsa,
+         liquidsoap-plugin-ao,
+         liquidsoap-plugin-faad,
+         liquidsoap-plugin-flac,
+         liquidsoap-plugin-icecast,
+         liquidsoap-plugin-lame,
+         liquidsoap-plugin-mad,
+         liquidsoap-plugin-ogg,
+         liquidsoap-plugin-portaudio,
+         liquidsoap-plugin-pulseaudio,
+         liquidsoap-plugin-taglib,
+         liquidsoap-plugin-voaacenc,
+         liquidsoap-plugin-vorbis,
+         lsb-release,
+         lsof,
+         mpg123,
+         patch,
+         postgresql,
+         postgresql-client,
+         pwgen,
+         python,
+         python-amqplib,
+         python-anyjson,
+         python-argh,
+         python-boto,
+         python-celery,
+         python-configobj,
+         python-daemon,
+         python-defusedxml,
+         python-dev,
+         python-docopt,
+         python-gst-1.0,
+         python-kombu,
+         python-libcloud,
+         python-magic,
+         python-mutagen,
+         python-pika,
+         python-pip,
+         python-poster,
+         python-pydispatch,
+         python-pyinotify,
+         python-requests,
+         python-rgain,
+         python-tz,
+         python-virtualenv,
+         rabbitmq-server,
+         silan,
+         sysvinit-utils,
+         unzip,
+         vorbisgain,
+         vorbis-tools,
+         vorbis-tools,
+         zip,
+         ${misc:Depends}
+Suggests: icecast
+Description: online platform for hosting your own radio station
+ LibreTime is a web-based scheduling and playout platform that enables you to
+ run an online or terrestrial radio station. It is forked from Sourcefabric's
+ Airtime after development on that stalled.
+ .
+ Within LibreTime you can manage content, users and distribution all from your
+ web-browser. Shows allow you to schedule pre-recorded content as well as
+ broadcasting live from any incoming live-stream.
+ .
+ WARNING: this package is not supported by the distribution and uses methods
+ such as composer to install required files on the system. These "out-of-distro"
+ files NOT be removed when uninstalling the package.

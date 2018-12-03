@@ -1,0 +1,108 @@
+#!/bin/bash
+set -e
+
+case "$1" in
+    configure|reconfigure)
+        if ! getent passwd airtime-playout > /dev/null ; then
+            echo 'Adding system user for Libretime Liquidsoap' 1>&2
+            adduser \
+                --system \
+                --quiet \
+                --home /nonexistant \
+                --no-create-home \
+                --group \
+                --gecos "LibreTime Liquidsoap" \
+                airtime-playout
+        fi
+        if ! getent passwd airtime-pypo > /dev/null ; then
+            echo 'Adding system user for Libretime Playout' 1>&2
+            adduser \
+                --system \
+                --quiet \
+                --home /nonexistant \
+                --no-create-home \
+                --group \
+                --gecos "LibreTime Playout" \
+                airtime-pypo
+        fi
+        if ! getent passwd airtime-analyzer > /dev/null ; then
+            echo 'Adding system user for Libretime Analyzer' 1>&2
+            adduser \
+                --system \
+                --quiet \
+                --home /nonexistant \
+                --no-create-home \
+                --group \
+                --gecos "LibreTime Analyzer" \
+                airtime-analyzer
+        fi
+        # Fill in required details in apache config
+        sed -i -e "s@WEB_PORT_LISTEN@@g" \
+            -e "s@WEB_PORT@80@g" \
+            -e "s@WEB_ROOT@/usr/share/airtime/airtime_mvc/public/@g" \
+            /etc/apache2/sites-available/airtime.conf
+
+        # Enable icecast
+        sed -i 's/ENABLE=false/ENABLE=true/g' /etc/default/icecast2
+
+        chmod -R 755 /var/log/airtime
+        chown -R www-data:www-data /var/log/airtime/
+
+        chmod -R a+x /var/tmp/airtime
+        chown -R www-data:www-data /var/tmp/airtime/
+
+        a2enmod rewrite php7.0
+        su postgres <<'EOF'
+                set +e
+                count=$(psql -d postgres -tAc "SELECT count(*) FROM pg_roles WHERE rolname='airtime';")
+                if [[ $count -eq 0 ]]; then
+                    psql -d postgres -tAc "CREATE USER airtime WITH ENCRYPTED PASSWORD 'airtime'; ALTER USER airtime CREATEDB;"
+                    [[ $? -eq 0 ]] && 
+                          echo "Created airtime user in PostgreSQL" || 
+                          echo "$0:${FUNCNAME}(): ERROR: Can't create airtime user in PostgreSQL!"
+                else
+                    echo "airtime user already exists in PostgreSQL"
+                fi
+                set -e
+# don't indent this!
+EOF
+        # Ignore errors in this check to avoid dying when vhost isn't found
+        set +e
+        rabbitmqctl list_vhosts | grep -w "^/airtime$" > /dev/null
+        RESULT="$?"
+        set -e
+        # Only run these if the vhost doesn't exist
+        if [ "$RESULT" != "0" ]; then
+            rabbitmqctl add_vhost /airtime
+            rabbitmqctl add_user airtime airtime
+        fi
+        rabbitmqctl set_permissions -p /airtime airtime '.\* .\* .\*'
+        chown www-data:www-data /etc/airtime
+        chown www-data:www-data /srv/airtime
+
+        ip_device="enp0s8"
+        IP=$(ifconfig ${ip_device} 2>/dev/null |awk -F'[ :]+' '/inet addr:/ {print $4}')
+
+        echo -e "\n-----------------------------------------------------"
+        echo    "                * Basic Setup DONE! *                "
+        echo    "                                                     "
+        echo    " To get started with Airtime, visit ${IP}            "
+        echo    " or, if you've set up your own web configuration,    "
+        echo    " the Airtime webroot on your webserver               "
+        echo "-----------------------------------------------------"
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+        exit 0
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0
+

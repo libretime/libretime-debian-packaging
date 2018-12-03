@@ -1,0 +1,12 @@
+airtime_mvc/* usr/share/airtime/php/airtime_mvc/
+vendor/* usr/share/airtime/php/vendor/
+VERSION usr/share/airtime/
+
+airtime.conf etc/apache2/sites-available/
+
+airtime_mvc/build/airtime-php.logrotate etc/logrotate.d/airtime-php/
+python_apps/pypo/liquidsoap/airtime-liquidsoap.logrotate etc/logrotate.d/airtime-liquidsoap/
+
+installer/php/airtime.ini etc/php/7.0/apache2/conf.d/
+
+installer/systemd/*.service lib/systemd/system/
