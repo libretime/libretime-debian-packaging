@@ -1,0 +1,41 @@
+Description: Run libretime processes under www-data
+ This allows the various processes to access logging and temporary files
+ correctly.
+Author: Kyle Robbertze <krobbertze@gmail.com>
+Last-Update: 2018-12-15
+
+---
+
+--- libretime-3.0.0~alpha.5.orig/installer/systemd/airtime-liquidsoap.service
++++ libretime-3.0.0~alpha.5/installer/systemd/airtime-liquidsoap.service
+@@ -4,7 +4,7 @@ Description=Airtime Liquidsoap Service
+ [Service]
+ ExecStart=/usr/bin/airtime-liquidsoap
+ User=libretime-playout
+-Group=libretime-playout
++Group=www-data
+ Restart=always
+ 
+ [Install]
+--- libretime-3.0.0~alpha.5.orig/installer/systemd/airtime-playout.service
++++ libretime-3.0.0~alpha.5/installer/systemd/airtime-playout.service
+@@ -4,7 +4,7 @@ Description=Airtime Playout Service
+ [Service]
+ ExecStart=/usr/bin/airtime-playout
+ User=libretime-pypo
+-Group=libretime-pypo
++Group=www-data
+ Restart=always
+ 
+ [Install]
+--- libretime-3.0.0~alpha.5.orig/installer/systemd/airtime_analyzer.service
++++ libretime-3.0.0~alpha.5/installer/systemd/airtime_analyzer.service
+@@ -4,7 +4,7 @@ Description=LibreTime Media Analyzer Ser
+ [Service]
+ ExecStart=/usr/bin/airtime_analyzer
+ User=airtime-analyzer
+-Group=airtime-analyzer
++Group=www-data
+ Restart=always
+ 
+ [Install]
