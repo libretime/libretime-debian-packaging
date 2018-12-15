@@ -56,7 +56,7 @@ Files: airtime_mvc/public/js/jplayer/*
 Copyright: 2009-2014 Happyworm Ltd
 License: Expat
 
-Files: airtime_mvc/public/js/jstimezonedetect/*
+Files: airtime_mvc/public/js/js-timezone-detect/*
 Copyright: 2012 Jon Nylander <pellepim@gmail.com>
 License: Expat
 
@@ -68,21 +68,16 @@ Files: airtime_mvc/public/js/libs/jquery*.js
 Copyright: 2005, 2013 jQuery Foundation, Inc. and other contributors
 License: Expat
 
-Files: airtime_mvc/public/js/libs/jQuery.stickyPanel.js
+Files: airtime_mvc/public/js/libs/jquery.stickyPanel.js
 Copyright: 2011 Donny Valazquez
 License: Apache-2.0
 
-Files: airtime_mvc/public/js/libs/moment.min.js
-Copyright: Tim Wood
-           Iskren Chernev
-License: Expat
-
 Files: airtime_mvc/public/js/libs/moment*.min.js
 Copyright: Tim Wood
            Iskren Chernev
 License: Expat
 
-Files: airtime_mvc/public/js/libs/moment*.min.js
+Files: airtime_mvc/public/js/libs/underscore-min.js
 Copyright: 2009-2013 Jeremy Ashkenas
            2009-2013 DocumentCloud and Investigative Reporters & Editors
 License: Expat

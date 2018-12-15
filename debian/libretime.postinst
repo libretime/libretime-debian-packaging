@@ -45,11 +45,11 @@ case "$1" in
         # Enable icecast
         sed -i 's/ENABLE=false/ENABLE=true/g' /etc/default/icecast2
 
-        chmod -R 755 /var/log/airtime
-        chown -R www-data:www-data /var/log/airtime/
+        chmod 755 /var/log/airtime
+        chown www-data:www-data /var/log/airtime/
 
-        chmod -R a+x /var/tmp/airtime
-        chown -R www-data:www-data /var/tmp/airtime/
+        chmod a+x /var/tmp/airtime
+        chown www-data:www-data /var/tmp/airtime/
 
         a2enmod rewrite php7.0
         su postgres <<'EOF'

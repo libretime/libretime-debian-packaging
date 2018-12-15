@@ -2,12 +2,12 @@ Source: libretime
 Section: web
 Priority: optional
 Maintainer: Kyle Robbertze <krobbertze@gmail.com>
-Build-Depends: debhelper (>= 9),
+Build-Depends: composer,
+               debhelper (>= 9),
+               dh-exec,
                dh-python,
+               git,
                mkdocs,
-               python,
-               python-setuptools,
-               composer,
                php7.0,
                php7.0-curl,
                php7.0-gd,
@@ -17,6 +17,10 @@ Build-Depends: debhelper (>= 9),
                php-amqplib,
                php-apcu,
                php-pear,
+               python,
+               python-setuptools,
+               unzip,
+               zip
 Standards-Version: 4.1.3
 Homepage: https://libretime.org/
 Vcs-Git: https://github.com/LibreTime/libretime-debian-packaging
@@ -24,7 +28,8 @@ Vcs-Browser: https://github.com/LibreTime/libretime-debian-packaging
 
 Package: libretime
 Architecture: any
-Depends: apache2,
+Depends: adduser,
+         apache2,
          curl,
          ecasound,
          flac,
@@ -64,6 +69,7 @@ Depends: apache2,
          lsof,
          mpg123,
          patch,
+         php-cli,
          postgresql,
          postgresql-client,
          pwgen,
@@ -94,7 +100,6 @@ Depends: apache2,
          python-virtualenv,
          rabbitmq-server,
          silan,
-         sysvinit-utils,
          unzip,
          vorbisgain,
          vorbis-tools,
