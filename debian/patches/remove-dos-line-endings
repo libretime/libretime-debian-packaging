@@ -3,12 +3,12 @@ Description: Change DOS line endings to Unix ones
  converts them all to Unix style endings.
 
 Author: Kyle Robbertze <krobbertze@gmail.com>
-Last-Update: 2018-12-03
+Last-Update: 2018-12-15
 
 ---
 
---- libretime-3.0.0-alpha.5.orig/airtime_mvc/public/js/contextmenu/jquery.contextMenu.js
-+++ libretime-3.0.0-alpha.5/airtime_mvc/public/js/contextmenu/jquery.contextMenu.js
+--- libretime-3.0.0~alpha.5.orig/airtime_mvc/public/js/contextmenu/jquery.contextMenu.js
++++ libretime-3.0.0~alpha.5/airtime_mvc/public/js/contextmenu/jquery.contextMenu.js
 @@ -1,1458 +1,1458 @@
 -/*
 - * jQuery contextMenu - Plugin for simple contextMenu handling
@@ -2926,8 +2926,8 @@ Last-Update: 2018-12-03
 +$.contextMenu.types = types;
 +
 +})(jQuery);
---- libretime-3.0.0-alpha.5.orig/airtime_mvc/public/js/datatables/i18n/sr_RS@latin.txt
-+++ libretime-3.0.0-alpha.5/airtime_mvc/public/js/datatables/i18n/sr_RS@latin.txt
+--- libretime-3.0.0~alpha.5.orig/airtime_mvc/public/js/datatables/i18n/sr_RS@latin.txt
++++ libretime-3.0.0~alpha.5/airtime_mvc/public/js/datatables/i18n/sr_RS@latin.txt
 @@ -1,19 +1,19 @@
 -﻿//Serbian Latin
 -
@@ -2967,8 +2967,8 @@ Last-Update: 2018-12-03
 +}
  }
 \ No newline at end of file
---- libretime-3.0.0-alpha.5.orig/airtime_mvc/public/js/libs/jquery.stickyPanel.js
-+++ libretime-3.0.0-alpha.5/airtime_mvc/public/js/libs/jquery.stickyPanel.js
+--- libretime-3.0.0~alpha.5.orig/airtime_mvc/public/js/libs/jquery.stickyPanel.js
++++ libretime-3.0.0~alpha.5/airtime_mvc/public/js/libs/jquery.stickyPanel.js
 @@ -1,111 +1,111 @@
 -﻿/*
 -*   jQuery.stickyPanel
@@ -3192,8 +3192,8 @@ Last-Update: 2018-12-03
 +
  })(jQuery);
 \ No newline at end of file
---- libretime-3.0.0-alpha.5.orig/airtime_mvc/public/js/plupload/i18n/hr_HR.js
-+++ libretime-3.0.0-alpha.5/airtime_mvc/public/js/plupload/i18n/hr_HR.js
+--- libretime-3.0.0~alpha.5.orig/airtime_mvc/public/js/plupload/i18n/hr_HR.js
++++ libretime-3.0.0~alpha.5/airtime_mvc/public/js/plupload/i18n/hr_HR.js
 @@ -1,25 +1,25 @@
 -// Croatian
 -plupload.addI18n({
@@ -3245,8 +3245,8 @@ Last-Update: 2018-12-03
 +    '%d files queued': '%d datoteka na čekanju.'
  });
 \ No newline at end of file
---- libretime-3.0.0-alpha.5.orig/airtime_mvc/public/js/plupload/i18n/sr_RS.js
-+++ libretime-3.0.0-alpha.5/airtime_mvc/public/js/plupload/i18n/sr_RS.js
+--- libretime-3.0.0~alpha.5.orig/airtime_mvc/public/js/plupload/i18n/sr_RS.js
++++ libretime-3.0.0~alpha.5/airtime_mvc/public/js/plupload/i18n/sr_RS.js
 @@ -1,14 +1,14 @@
 -// Serbian Cyrillic
 -plupload.addI18n({
@@ -3276,8 +3276,8 @@ Last-Update: 2018-12-03
 +    'Start Upload': 'Почни upload',
 +    'Uploaded %d/%d files': 'Снимљено %d/%d фајлова'
 +});
---- libretime-3.0.0-alpha.5.orig/airtime_mvc/public/js/plupload/i18n/sr_RS@latin.js
-+++ libretime-3.0.0-alpha.5/airtime_mvc/public/js/plupload/i18n/sr_RS@latin.js
+--- libretime-3.0.0~alpha.5.orig/airtime_mvc/public/js/plupload/i18n/sr_RS@latin.js
++++ libretime-3.0.0~alpha.5/airtime_mvc/public/js/plupload/i18n/sr_RS@latin.js
 @@ -1,14 +1,14 @@
 -﻿// Serbian Latin
 -plupload.addI18n({
@@ -3307,8 +3307,8 @@ Last-Update: 2018-12-03
 +    'Start Upload': 'Počni upload',
 +    'Uploaded %d/%d files': 'Snimljeno %d/%d fajlova'
 +});
---- libretime-3.0.0-alpha.5.orig/airtime_mvc/public/js/sprintf/sprintf-0.7-beta1.js
-+++ libretime-3.0.0-alpha.5/airtime_mvc/public/js/sprintf/sprintf-0.7-beta1.js
+--- libretime-3.0.0~alpha.5.orig/airtime_mvc/public/js/sprintf/sprintf-0.7-beta1.js
++++ libretime-3.0.0~alpha.5/airtime_mvc/public/js/sprintf/sprintf-0.7-beta1.js
 @@ -1,183 +1,183 @@
 -/**
 -sprintf() for JavaScript 0.7-beta1
@@ -3676,8 +3676,8 @@ Last-Update: 2018-12-03
 +	argv.unshift(fmt);
 +	return sprintf.apply(null, argv);
 +};
---- libretime-3.0.0-alpha.5.orig/airtime_mvc/public/js/timepicker/jquery.ui.timepicker.js
-+++ libretime-3.0.0-alpha.5/airtime_mvc/public/js/timepicker/jquery.ui.timepicker.js
+--- libretime-3.0.0~alpha.5.orig/airtime_mvc/public/js/timepicker/jquery.ui.timepicker.js
++++ libretime-3.0.0~alpha.5/airtime_mvc/public/js/timepicker/jquery.ui.timepicker.js
 @@ -1,1345 +1,1345 @@
 -/*
 - * jQuery UI Timepicker 0.2.9
@@ -6369,8 +6369,8 @@ Last-Update: 2018-12-03
 +    window['TP_jQuery_' + tpuuid] = $;
 +
 +})(jQuery);
---- libretime-3.0.0-alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Queue/Adapter/Db/postgresql.sql
-+++ libretime-3.0.0-alpha.5/vendor/zendframework/zendframework1/library/Zend/Queue/Adapter/Db/postgresql.sql
+--- libretime-3.0.0~alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Queue/Adapter/Db/postgresql.sql
++++ libretime-3.0.0~alpha.5/vendor/zendframework/zendframework1/library/Zend/Queue/Adapter/Db/postgresql.sql
 @@ -1,49 +1,49 @@
 -/*
 -Sample grant for PostgreSQL
@@ -6470,8 +6470,8 @@ Last-Update: 2018-12-03
 +)
 +WITH (OIDS=FALSE);
 +ALTER TABLE message OWNER TO queue;
---- libretime-3.0.0-alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Queue/Adapter/Db/sqlsrv.sql
-+++ libretime-3.0.0-alpha.5/vendor/zendframework/zendframework1/library/Zend/Queue/Adapter/Db/sqlsrv.sql
+--- libretime-3.0.0~alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Queue/Adapter/Db/sqlsrv.sql
++++ libretime-3.0.0~alpha.5/vendor/zendframework/zendframework1/library/Zend/Queue/Adapter/Db/sqlsrv.sql
 @@ -1,44 +1,44 @@
 -
 -CREATE TABLE [dbo].[queue](
@@ -6561,8 +6561,8 @@ Last-Update: 2018-12-03
 +
 +
 +
---- libretime-3.0.0-alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command.php
-+++ libretime-3.0.0-alpha.5/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command.php
+--- libretime-3.0.0~alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command.php
++++ libretime-3.0.0~alpha.5/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command.php
 @@ -1,413 +1,413 @@
 -<?php
 -/**
@@ -7390,8 +7390,8 @@ Last-Update: 2018-12-03
 +		}
 +	}
 +}
---- libretime-3.0.0-alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/Argv.php
-+++ libretime-3.0.0-alpha.5/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/Argv.php
+--- libretime-3.0.0~alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/Argv.php
++++ libretime-3.0.0~alpha.5/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/Argv.php
 @@ -1,71 +1,71 @@
 -<?php
 -/**
@@ -7535,8 +7535,8 @@ Last-Update: 2018-12-03
 +		return $parameterValue;
 +	}
 +}
---- libretime-3.0.0-alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/ConfigFile.php
-+++ libretime-3.0.0-alpha.5/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/ConfigFile.php
+--- libretime-3.0.0~alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/ConfigFile.php
++++ libretime-3.0.0~alpha.5/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/ConfigFile.php
 @@ -1,104 +1,104 @@
 -<?php
 -/**
@@ -7746,8 +7746,8 @@ Last-Update: 2018-12-03
 +		return $parameterValue;
 +	}
 +}
---- libretime-3.0.0-alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/Env.php
-+++ libretime-3.0.0-alpha.5/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/Env.php
+--- libretime-3.0.0~alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/Env.php
++++ libretime-3.0.0~alpha.5/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/Env.php
 @@ -1,75 +1,75 @@
 -<?php
 -/**
@@ -7899,8 +7899,8 @@ Last-Update: 2018-12-03
 +		return $parameterValue;
 +	}
 +}
---- libretime-3.0.0-alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/ParameterSourceInterface.php
-+++ libretime-3.0.0-alpha.5/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/ParameterSourceInterface.php
+--- libretime-3.0.0~alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/ParameterSourceInterface.php
++++ libretime-3.0.0~alpha.5/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/ParameterSourceInterface.php
 @@ -1,43 +1,43 @@
 -<?php
 -/**
@@ -7988,8 +7988,8 @@ Last-Update: 2018-12-03
 +	 */
 +	public function getValueForParameter($parameter, $argv = array());
 +}
---- libretime-3.0.0-alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/Prompt.php
-+++ libretime-3.0.0-alpha.5/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/Prompt.php
+--- libretime-3.0.0~alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/Prompt.php
++++ libretime-3.0.0~alpha.5/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/Prompt.php
 @@ -1,66 +1,66 @@
 -<?php
 -/**
@@ -8123,8 +8123,8 @@ Last-Update: 2018-12-03
 +		return $parameterValue;
 +	}
 +}
---- libretime-3.0.0-alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/StdIn.php
-+++ libretime-3.0.0-alpha.5/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/StdIn.php
+--- libretime-3.0.0~alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/StdIn.php
++++ libretime-3.0.0~alpha.5/vendor/zendframework/zendframework1/library/Zend/Service/Console/Command/ParameterSource/StdIn.php
 @@ -1,81 +1,81 @@
 -<?php
 -/**
@@ -8288,8 +8288,8 @@ Last-Update: 2018-12-03
 +		return $parameterValue;
 +	}
 +}
---- libretime-3.0.0-alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Service/Console/Exception.php
-+++ libretime-3.0.0-alpha.5/vendor/zendframework/zendframework1/library/Zend/Service/Console/Exception.php
+--- libretime-3.0.0~alpha.5.orig/vendor/zendframework/zendframework1/library/Zend/Service/Console/Exception.php
++++ libretime-3.0.0~alpha.5/vendor/zendframework/zendframework1/library/Zend/Service/Console/Exception.php
 @@ -1,39 +1,39 @@
 -<?php
 -/**
@@ -8369,8 +8369,8 @@ Last-Update: 2018-12-03
 + */
 +class Zend_Service_Console_Exception extends Zend_Service_Exception
 +{}
---- libretime-3.0.0-alpha.5.orig/vendor/zendframework/zendframework1/resources/languages/sk/Zend_Captcha.php
-+++ libretime-3.0.0-alpha.5/vendor/zendframework/zendframework1/resources/languages/sk/Zend_Captcha.php
+--- libretime-3.0.0~alpha.5.orig/vendor/zendframework/zendframework1/resources/languages/sk/Zend_Captcha.php
++++ libretime-3.0.0~alpha.5/vendor/zendframework/zendframework1/resources/languages/sk/Zend_Captcha.php
 @@ -1,36 +1,36 @@
 -<?php
 -/**
@@ -8444,8 +8444,8 @@ Last-Update: 2018-12-03
 +    "Captcha ID field is missing" => "Chýba pole captcha ID",
 +    "Captcha value is wrong" => "Chybná hodnota catpchy",
 +);
---- libretime-3.0.0-alpha.5.orig/vendor/zendframework/zendframework1/resources/languages/sk/Zend_Validate.php
-+++ libretime-3.0.0-alpha.5/vendor/zendframework/zendframework1/resources/languages/sk/Zend_Validate.php
+--- libretime-3.0.0~alpha.5.orig/vendor/zendframework/zendframework1/resources/languages/sk/Zend_Validate.php
++++ libretime-3.0.0~alpha.5/vendor/zendframework/zendframework1/resources/languages/sk/Zend_Validate.php
 @@ -1,265 +1,265 @@
 -<?php
 -/**
