@@ -42,14 +42,10 @@ case "$1" in
             -e "s@WEB_ROOT@/usr/share/airtime/airtime_mvc/public/@g" \
             /etc/apache2/sites-available/airtime.conf
 
+        systemctl restart apache2
+
         # Enable icecast
         sed -i 's/ENABLE=false/ENABLE=true/g' /etc/default/icecast2
-
-        chmod 755 /var/log/airtime
-        chown www-data:www-data /var/log/airtime/
-
-        chmod a+x /var/tmp/airtime
-        chown www-data:www-data /var/tmp/airtime/
 
         a2enmod rewrite php7.0
         su postgres <<'EOF'
@@ -76,9 +72,7 @@ EOF
             rabbitmqctl add_vhost /airtime
             rabbitmqctl add_user airtime airtime
         fi
-        rabbitmqctl set_permissions -p /airtime airtime '.\* .\* .\*'
-        chown www-data:www-data /etc/airtime
-        chown www-data:www-data /srv/airtime
+        rabbitmqctl set_permissions -p /airtime airtime .\* .\* .\*
 
         ip_device="enp0s8"
         IP=$(ifconfig ${ip_device} 2>/dev/null |awk -F'[ :]+' '/inet addr:/ {print $4}')
