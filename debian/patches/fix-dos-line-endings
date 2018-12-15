@@ -1,7 +1,6 @@
-Description: Change DOS line endings to Unix ones
- Build fails due to line ending incompatibilities. This
- converts them all to Unix style endings.
-
+Description: Fix DOS line endings
+ Git does weird things with line endings. These files need patching
+ to use Unix style endings.
 Author: Kyle Robbertze <krobbertze@gmail.com>
 Last-Update: 2018-12-15
 

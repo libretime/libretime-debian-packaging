@@ -11,17 +11,3 @@ python_apps/pypo/liquidsoap/airtime-liquidsoap.logrotate etc/logrotate.d/airtime
 installer/php/airtime.ini etc/php/7.0/apache2/conf.d/
 
 installer/systemd/*.service lib/systemd/system/
-
-debian/libretime/usr/lib/python2.7/dist-packages/airtime_analyzer/* usr/lib/python2.7/dist-packages/airtime_analyzer/
-debian/libretime/usr/lib/python2.7/dist-packages/airtime_analyzer-0.1.egg-info usr/lib/python2.7/dist-packages/
-debian/libretime/usr/bin/airtime_analyzer usr/bin
-debian/libretime/usr/lib/python2.7/dist-packages/airtime-celery/* usr/lib/python2.7/dist-packages/airtime-celery/
-debian/libretime/usr/lib/python2.7/dist-packages/airtime_celery-0.1.egg-info usr/lib/python2.7/dist-packages/
-debian/libretime/usr/lib/python2.7/dist-packages/api_clients/* usr/lib/python2.7/dist-packages/api_clients/
-debian/libretime/usr/lib/python2.7/dist-packages/airtime_celery-1.0.egg-info usr/lib/python2.7/dist-packages/
-debian/libretime/usr/lib/python2.7/dist-packages/pypo/* usr/lib/python2.7/dist-packages/pypo/
-debian/libretime/usr/lib/python2.7/dist-packages/liquidsoap/* usr/lib/python2.7/dist-packages/liquidsoap/
-debian/libretime/usr/lib/python2.7/dist-packages/airtime_playout-0.1.egg-info usr/lib/python2.7/dist-packages/
-debian/libretime/usr/bin/airtime_playout usr/bin
-debian/libretime/usr/bin/pyponotify usr/bin
-debian/libretime/usr/bin/airtime-liquidsoap usr/bin
