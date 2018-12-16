@@ -13,6 +13,7 @@ case "$1" in
                 --group \
                 --gecos "LibreTime Liquidsoap" \
                 airtime-playout
+            usermod -a -G www-data airtime-playout
         fi
         if ! getent passwd airtime-pypo > /dev/null ; then
             echo 'Adding system user for Libretime Playout' 1>&2
@@ -24,6 +25,7 @@ case "$1" in
                 --group \
                 --gecos "LibreTime Playout" \
                 airtime-pypo
+            usermod -a -G www-data airtime-pypo
         fi
         if ! getent passwd airtime-analyzer > /dev/null ; then
             echo 'Adding system user for Libretime Analyzer' 1>&2
@@ -35,6 +37,19 @@ case "$1" in
                 --group \
                 --gecos "LibreTime Analyzer" \
                 airtime-analyzer
+            usermod -a -G www-data airtime-analyzer
+        fi
+        if ! getent passwd celery > /dev/null ; then
+            echo 'Adding system user for Libretime Celery' 1>&2
+            adduser \
+                --system \
+                --quiet \
+                --home /nonexistant \
+                --no-create-home \
+                --group \
+                --gecos "LibreTime Celery" \
+                celery
+            usermod -a -G www-data celery
         fi
         # Fill in required details in apache config
         sed -i -e "s@WEB_PORT_LISTEN@@g" \

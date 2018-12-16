@@ -36,17 +36,19 @@ override_dh_install:
 	python python_apps/api_clients/setup.py install ${PYTHON_INSTALL_FLAGS}
 	python python_apps/pypo/setup.py install \
 		--no-init-script ${PYTHON_INSTALL_FLAGS}
-	mkdir -p debian/libretime/etc/airtime
 	mkdir -p debian/libretime/var/log/airtime
+	mkdir -p debian/libretime/var/log/airtime/pypo
+	mkdir -p debian/libretime/var/log/airtime/pypo-liquidsoap
 	mkdir -p debian/libretime/srv/airtime
 	mkdir -p debian/libretime/var/tmp/airtime
 	dh_install
 
 override_dh_fixperms:
 	dh_fixperms
-	chmod 755 debian/libretime/var/log/airtime
-	chown www-data:www-data debian/libretime/var/log/airtime/
+	chmod -R 775 debian/libretime/var/log/airtime
+	chown www-data:www-data -R debian/libretime/var/log/airtime/
 	chmod a+x debian/libretime/var/tmp/airtime
 	chown www-data:www-data debian/libretime/var/tmp/airtime/
 	chown www-data:www-data debian/libretime/etc/airtime
+	chmod 664 debian/libretime/etc/airtime/liquidsoap.cfg
 	chown www-data:www-data debian/libretime/srv/airtime
