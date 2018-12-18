@@ -21,7 +21,6 @@ override_dh_auto_clean:
 	python python_apps/pypo/setup.py clean --all
 
 override_dh_auto_build:
-	composer install --no-dev
 	dh_auto_build
 	python python_apps/airtime_analyzer/setup.py build
 	python python_apps/airtime-celery/setup.py build
