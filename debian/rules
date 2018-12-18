@@ -10,6 +10,7 @@ export PYTHONDONTWRITEBYTECODE=yes
 
 override_dh_auto_clean:
 	dh_auto_clean
+	rm -rf .pc
 	rm -rf build
 	rm -rf python_apps/airtime_analyzer/airtime_analyzer.egg-info
 	python python_apps/airtime_analyzer/setup.py clean --all
