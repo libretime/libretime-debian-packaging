@@ -6,8 +6,10 @@ Last-Update: 2018-12-15
 
 ---
 
---- libretime-3.0.0~alpha.5.orig/installer/systemd/airtime-liquidsoap.service
-+++ libretime-3.0.0~alpha.5/installer/systemd/airtime-liquidsoap.service
+Index: packaging/installer/systemd/airtime-liquidsoap.service
+===================================================================
+--- packaging.orig/installer/systemd/airtime-liquidsoap.service
++++ packaging/installer/systemd/airtime-liquidsoap.service
 @@ -4,7 +4,7 @@ Description=Airtime Liquidsoap Service
  [Service]
  ExecStart=/usr/bin/airtime-liquidsoap
@@ -17,8 +19,10 @@ Last-Update: 2018-12-15
  Restart=always
  
  [Install]
---- libretime-3.0.0~alpha.5.orig/installer/systemd/airtime-playout.service
-+++ libretime-3.0.0~alpha.5/installer/systemd/airtime-playout.service
+Index: packaging/installer/systemd/airtime-playout.service
+===================================================================
+--- packaging.orig/installer/systemd/airtime-playout.service
++++ packaging/installer/systemd/airtime-playout.service
 @@ -4,7 +4,7 @@ Description=Airtime Playout Service
  [Service]
  ExecStart=/usr/bin/airtime-playout
@@ -28,8 +32,10 @@ Last-Update: 2018-12-15
  Restart=always
  
  [Install]
---- libretime-3.0.0~alpha.5.orig/installer/systemd/airtime_analyzer.service
-+++ libretime-3.0.0~alpha.5/installer/systemd/airtime_analyzer.service
+Index: packaging/installer/systemd/airtime_analyzer.service
+===================================================================
+--- packaging.orig/installer/systemd/airtime_analyzer.service
++++ packaging/installer/systemd/airtime_analyzer.service
 @@ -4,7 +4,7 @@ Description=LibreTime Media Analyzer Ser
  [Service]
  ExecStart=/usr/bin/airtime_analyzer
