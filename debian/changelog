@@ -1,10 +1,10 @@
-libretime (3.0.0~alpha.5-2) xenial; urgency=medium
+libretime (3.0.0~alpha.6-1) xenial; urgency=medium
 
+  * New upstream release
   * Drop composer from build process
   * Fix upstream version mangling
-  * Remove .pc temp directory in clean
 
- -- Kyle Robbertze <krobbertze@gmail.com>  Tue, 18 Dec 2018 09:45:03 +0200
+ -- Kyle Robbertze <krobbertze@gmail.com>  Mon, 24 Dec 2018 00:05:52 +0200
 
 libretime (3.0.0~alpha.5-1) xenial; urgency=medium
 
