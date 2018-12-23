@@ -93,7 +93,7 @@ code=""
 apache_bin=""
 skip_postgres=0
 skip_rabbitmq=0
-
+default_value="Y"
 
 function verbose() {
     if [[ ${_v} -eq 1 ]]; then
@@ -586,7 +586,6 @@ fi
 is_debian_dist=false
 is_debian_stretch=false
 is_debian_jessie=false
-is_debian_wheezy=false
 is_ubuntu_dist=false
 is_ubuntu_bionic=false
 is_ubuntu_xenial=false
@@ -613,6 +612,9 @@ case "${dist}-${code}" in
         code="trusty"
         is_ubuntu_dist=true
         is_ubuntu_trusty=true
+        echo -e "WARNING: Ubuntu Trusty will be EOL by April 2019 and LibreTime will no longer support it at that point." >&2
+        echo -e "Please upgrade to a non-EOL distro ASAP!" >&2
+        sleep 6
         ;;
     debian-9|debian-stretch)
         code="stretch"
@@ -633,9 +635,9 @@ case "${dist}-${code}" in
         is_debian_jessie=true
         ;;
     debian-7|debian-wheezy)
-        code="wheezy"
-        is_debian_dist=true
-        is_debian_wheezy=true
+        echo -e "ERROR: Debian Wheezy is archived and does not receive any security or other updates since 2018-05-31." >&2
+        echo -e "The LibreTime installer dropped support for installing LibreTime on Wheezy in 3.0.0-alpha.6." >&2
+        exit 1
         ;;
     centos-7)
         is_centos_dist=true
@@ -767,6 +769,7 @@ fi
 if [ "$apache" = "f" -a ${_i} -eq 1 ]; then
     echo -e "Install default Airtime apache configuration? (Y/n): \c"
     read IN
+    IN=${IN:-$default_value}
     if [ "$IN" = "y" -o "$IN" = "Y" ]; then
         apache="t"
     fi
@@ -868,6 +871,7 @@ fi
 if [ "$icecast" = "f" -a ${_i} -eq 1 ]; then
     echo -e "Install default Airtime Icecast configuration? (Y/n): \c"
     read IN
+    IN=${IN:-$default_value}
     if [ "$IN" = "y" -o "$IN" = "Y" ]; then
         icecast="t"
     fi
@@ -1040,6 +1044,7 @@ EOF
     elif [ ${_i} -eq 1 ]; then
         echo -e "Create default airtime postgres user? (Y/n): \c"
         read IN
+        IN=${IN:-$default_value}
         if [ "$IN" = "y" -o "$IN" = "Y" ]; then
             setupAirtimePostgresUser
         fi

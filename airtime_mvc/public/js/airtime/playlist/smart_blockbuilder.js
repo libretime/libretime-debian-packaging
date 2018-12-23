@@ -291,8 +291,20 @@ function setSmartBlockEvents() {
         setupUI();
         AIRTIME.library.checkAddButton();
     });
-    
-    /********** CRITERIA CHANGE **********/
+
+    /********** LIMIT CHANGE *************/
+    form.find('select[id="sp_limit_options"]').live("change", function() {
+        var limVal = form.find('input[id="sp_limit_value"]');
+        if ($(this).val() === 'remaining') {
+            disableAndHideLimitValue();
+        }
+        else {
+            enableAndShowLimitValue();
+        }
+    });
+
+
+        /********** CRITERIA CHANGE **********/
     form.find('select[id^="sp_criteria"]:not([id^="sp_criteria_modifier"])').live("change", function(){
         var index = getRowIndex($(this).parent());
         //need to change the criteria value for any modifier rows
@@ -461,6 +473,9 @@ function setupUI() {
         shuffleButton = activeTab.find('button[name="shuffle_button"]'),
         generateButton = activeTab.find('button[name="generate_button"]'),
         fadesButton = activeTab.find('#spl_crossfade, #pl-bl-clear-content');
+    if (activeTab.find('#sp_limit_options').val() == 'remaining') {
+        disableAndHideLimitValue();
+    }
 
     if (!plContents.hasClass('spl_empty')) {
         if (shuffleButton.hasClass('ui-state-disabled')) {
@@ -473,7 +488,7 @@ function setupUI() {
     }
     
     if (activeTab.find('.obj_type').val() == 'block') {
-        if (playlist_type == "0") {
+        if (playlist_type == "1") {
             shuffleButton.removeAttr("disabled");
             generateButton.removeAttr("disabled");
             generateButton.html($.i18n._("Generate"));
@@ -528,6 +543,33 @@ function setupUI() {
             my: "left bottom",
             at: "right center"
         }
+    });
+
+
+    $(".overflow_tracks_help_icon").qtip({
+        content: {
+            text: sprintf($.i18n._("<p>If this option is unchecked, the smartblock will schedule as many tracks as can be played out <strong>in their entirety</strong> within the specified duration. This will usually result in audio playback that is slightly less than the specified duration.</p><p>If this option is checked, the smartblock will also schedule one final track which will overflow the specified duration. This final track may be cut off mid-way if the show into which the smartblock is added finishes.</p>"), PRODUCT_NAME)
+        },
+        hide: {
+            delay: 500,
+            fixed: true
+        },
+        style: {
+            border: {
+                width: 0,
+                radius: 4
+            },
+            classes: "ui-tooltip-dark ui-tooltip-rounded"
+        },
+        position: {
+            my: "left bottom",
+            at: "right center"
+        }
+    });
+
+    activeTab.find('.collapsible-header').off('click').on('click', function(){
+        $(this).toggleClass('visible');
+        $('.smart-block-advanced').toggle();
     });
 }
 
@@ -610,6 +652,14 @@ function disableAndHideExtraField(valEle, index) {
     //make value input larger since we don't have extra field now
     var criteria_value = $('#sp_criteria_value_'+index);
     sizeTextBoxes(criteria_value, 'sp_extra_input_text', 'sp_input_text');
+}
+function disableAndHideLimitValue() {
+    console.log('we hide it');
+    $('#sp_limit_value').hide();
+}
+function enableAndShowLimitValue() {
+    console.log('we show it');
+    $('#sp_limit_value').show();
 }
 
 function sizeTextBoxes(ele, classToRemove, classToAdd) {

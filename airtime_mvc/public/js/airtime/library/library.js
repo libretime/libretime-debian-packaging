@@ -1277,7 +1277,7 @@ var AIRTIME = (function(AIRTIME) {
                     }
                     // remove 'Add to smart block' option if the current
                     // block is dynamic
-                    if ($('input:radio[name=sp_type]:checked').val() === "1") {
+                    if ($('input:radio[name=sp_type]:checked').val() === "0") {
                         delete oItems.pl_add;
                     }
                     items = oItems;
@@ -1379,8 +1379,8 @@ var AIRTIME = (function(AIRTIME) {
             });
         $.extend(true, podcastToolbarButtons[AIRTIME.widgets.Table.TOOLBAR_BUTTON_ROLES.EDIT],
             {
-                title: $.i18n._('Settings'),
-                iconClass : "icon-cog",
+                title: $.i18n._('Edit'),
+                iconClass : "icon-pencil",
                 eventHandlers: {
                     click: AIRTIME.podcast.editSelectedPodcasts
                 },
