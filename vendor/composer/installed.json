@@ -686,7 +686,7 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/simplepie/simplepie/zipball/3d628875ef6cda045b9a7df6ac509f73756670c6",
+            "url": "https://api.github.com/repos/simplepie/simplepie/zipball/0e8fe72132dad765d25db4cabc69a91139af1263",
             "reference": "eb6dd2d578dd62a1eec68b60cdda8c4a38a8de49",
             "shasum": ""
         },
@@ -844,6 +844,7 @@
         "keywords": [
             "ZF1",
             "framework"
-        ]
+        ],
+        "abandoned": "zendframework/zendframework"
     }
 ]

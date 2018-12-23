@@ -159,7 +159,8 @@ class Application_Form_SmartBlockCriteria extends Zend_Form_SubForm
             $this->limitOptions = array(
                 "hours"   => _("hours"),
                 "minutes" => _("minutes"),
-                "items"   => _("items")
+                "items"   => _("items"),
+                "remaining" => _("time remaining in show")
             );
         }
         return $this->limitOptions;
@@ -223,7 +224,7 @@ class Application_Form_SmartBlockCriteria extends Zend_Form_SubForm
     {
         // load type
         $out = CcBlockQuery::create()->findPk($p_blockId);
-        if ($out->getDbType() == "static") {
+        if ($out->getDbType() == "dynamic") {
             $blockType = 0;
         } else {
             $blockType = 1;
@@ -233,8 +234,9 @@ class Application_Form_SmartBlockCriteria extends Zend_Form_SubForm
         $spType->setLabel(_('Type:'))
                ->setDecorators(array('viewHelper'))
                ->setMultiOptions(array(
-                    'static' => _('Static'),
-                    'dynamic' => _('Dynamic')
+                    'dynamic' => _('Dynamic'),
+                    'static' => _('Static')
+
                 ))
                ->setValue($blockType);
         $this->addElement($spType);
@@ -446,6 +448,14 @@ class Application_Form_SmartBlockCriteria extends Zend_Form_SubForm
         }
         $this->addElement($repeatTracks);
 
+        $overflowTracks = new Zend_Form_Element_Checkbox('sp_overflow_tracks');
+        $overflowTracks->setDecorators(array('viewHelper'))
+            ->setLabel(_('Allow last track to exceed time limit:'));
+        if (isset($storedCrit["overflow_tracks"])) {
+            $overflowTracks->setChecked($storedCrit["overflow_tracks"]["value"] == 1);
+        }
+        $this->addElement($overflowTracks);
+
         $sort = new Zend_Form_Element_Select('sp_sort_options');
         $sort->setAttrib('class', 'sp_input_select')
               ->setDecorators(array('viewHelper'))
@@ -477,25 +487,16 @@ class Application_Form_SmartBlockCriteria extends Zend_Form_SubForm
             $limitValue->setValue(1);
         }
 
-        //getting block content candidate count that meets criteria
-        $bl = new Application_Model_Block($p_blockId);
-        if ($p_isValid) {
-            $files = $bl->getListofFilesMeetCriteria();
-            $showPoolCount = true;
-        } else {
-            $files = null;
-            $showPoolCount = false;
-        }
 
         $generate = new Zend_Form_Element_Button('generate_button');
         $generate->setAttrib('class', 'sp-button btn');
         $generate->setAttrib('title', _('Generate playlist content and save criteria'));
         $generate->setIgnore(true);
         if ($blockType == 0) {
-            $generate->setLabel(_('Generate'));
+            $generate->setLabel(_('Preview'));
         }
         else {
-            $generate->setLabel(_('Preview'));
+            $generate->setLabel(_('Generate'));
         }
         $generate->setDecorators(array('viewHelper'));
         $this->addElement($generate);

@@ -35,6 +35,7 @@ return array(
     'AirtimeUpgrader300alpha' => $baseDir . '/airtime_mvc/application/upgrade/Upgrades.php',
     'AirtimeUpgrader300alpha1' => $baseDir . '/airtime_mvc/application/upgrade/Upgrades.php',
     'AirtimeUpgrader300alpha6' => $baseDir . '/airtime_mvc/application/upgrade/Upgrades.php',
+    'AirtimeUpgrader300alpha7' => $baseDir . '/airtime_mvc/application/upgrade/Upgrades.php',
     'Airtime_Decorator_Admin_Only' => $baseDir . '/airtime_mvc/application/forms/helpers/CustomDecorators.php',
     'Airtime_Decorator_SuperAdmin_Only' => $baseDir . '/airtime_mvc/application/forms/helpers/CustomDecorators.php',
     'Airtime_View_Helper_IsTrial' => $baseDir . '/airtime_mvc/application/views/helpers/IsTrial.php',
