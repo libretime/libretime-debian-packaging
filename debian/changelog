@@ -2,7 +2,7 @@ libretime (3.0.0~alpha.5-2) xenial; urgency=medium
 
   * Drop composer from build process
   * Fix upstream version mangling
-  * Refresh patches
+  * Remove .pc temp directory in clean
 
  -- Kyle Robbertze <krobbertze@gmail.com>  Tue, 18 Dec 2018 09:45:03 +0200
 
