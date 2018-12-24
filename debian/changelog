@@ -1,3 +1,10 @@
+libretime (3.0.0~alpha.6-2) xenial; urgency=medium
+
+  * Set correct permissions on music stor
+  * Enable mod-rewrite before restarting apache
+
+ -- Kyle Robbertze <krobbertze@gmail.com>  Mon, 24 Dec 2018 02:42:47 +0200
+
 libretime (3.0.0~alpha.6-1) xenial; urgency=medium
 
   * New upstream release
