@@ -61,7 +61,9 @@ case "$1" in
         systemctl restart apache2
 
         # Enable icecast
-        sed -i 's/ENABLE=false/ENABLE=true/g' /etc/default/icecast2
+        if [ -f /etc/default/icecast2 ]; then
+            sed -i 's/ENABLE=false/ENABLE=true/g' /etc/default/icecast2
+        fi
 
         su postgres <<'EOF'
                 set +e
