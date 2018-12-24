@@ -57,12 +57,12 @@ case "$1" in
             -e "s@WEB_ROOT@/usr/share/airtime/airtime_mvc/public/@g" \
             /etc/apache2/sites-available/airtime.conf
 
+        a2enmod rewrite php7.0
         systemctl restart apache2
 
         # Enable icecast
         sed -i 's/ENABLE=false/ENABLE=true/g' /etc/default/icecast2
 
-        a2enmod rewrite php7.0
         su postgres <<'EOF'
                 set +e
                 count=$(psql -d postgres -tAc "SELECT count(*) FROM pg_roles WHERE rolname='airtime';")
