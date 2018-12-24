@@ -60,11 +60,6 @@ case "$1" in
         a2enmod rewrite php7.0
         systemctl restart apache2
 
-        # Enable icecast
-        if [ -f /etc/default/icecast2 ]; then
-            sed -i 's/ENABLE=false/ENABLE=true/g' /etc/default/icecast2
-        fi
-
         su postgres <<'EOF'
                 set +e
                 count=$(psql -d postgres -tAc "SELECT count(*) FROM pg_roles WHERE rolname='airtime';")
