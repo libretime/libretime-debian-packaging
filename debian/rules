@@ -50,4 +50,5 @@ override_dh_fixperms:
 	chown www-data:www-data debian/libretime/var/tmp/airtime/
 	chown www-data:www-data debian/libretime/etc/airtime
 	chmod 664 debian/libretime/etc/airtime/liquidsoap.cfg
+	chown www-data:www-data debian/libretime/etc/airtime/liquidsoap.cfg
 	chown www-data:www-data debian/libretime/srv/airtime
