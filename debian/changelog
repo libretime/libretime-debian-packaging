@@ -1,3 +1,9 @@
+libretime (3.0.0~alpha.6-3) UNRELEASED; urgency=medium
+
+  * Run airtime-analyzer under www-data
+
+ -- Kyle Robbertze <krobbertze@gmail.com>  Wed, 26 Dec 2018 15:47:50 +0200
+
 libretime (3.0.0~alpha.6-2) xenial; urgency=medium
 
   * Set correct permissions on music stor

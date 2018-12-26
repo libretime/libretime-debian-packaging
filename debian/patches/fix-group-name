@@ -2,15 +2,15 @@ From: Kyle Robbertze <krobbertze@gmail.com>
 Date: Mon, 24 Dec 2018 00:46:02 +0200
 Subject: Run libretime processes under www-data
 
-Last-Update: 2018-12-15
+Last-Update: 2018-12-26
 
 This allows the various processes to access logging and temporary files
 correctly.
 ---
  installer/systemd/airtime-liquidsoap.service | 2 +-
  installer/systemd/airtime-playout.service    | 2 +-
- installer/systemd/airtime_analyzer.service   | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
+ installer/systemd/airtime_analyzer.service   | 4 ++--
+ 3 files changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/installer/systemd/airtime-liquidsoap.service b/installer/systemd/airtime-liquidsoap.service
 index 0c0db34..b928fdf 100644
@@ -39,14 +39,16 @@ index 35d07c4..82d5ed0 100644
  
  [Install]
 diff --git a/installer/systemd/airtime_analyzer.service b/installer/systemd/airtime_analyzer.service
-index 4a02319..5ac45c2 100644
+index 4a02319..43ed1ac 100644
 --- a/installer/systemd/airtime_analyzer.service
 +++ b/installer/systemd/airtime_analyzer.service
-@@ -4,7 +4,7 @@ Description=LibreTime Media Analyzer Service
+@@ -3,8 +3,8 @@ Description=LibreTime Media Analyzer Service
+ 
  [Service]
  ExecStart=/usr/bin/airtime_analyzer
- User=airtime-analyzer
+-User=airtime-analyzer
 -Group=airtime-analyzer
++User=www-data
 +Group=www-data
  Restart=always
  
