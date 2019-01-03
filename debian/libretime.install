@@ -1,7 +1,7 @@
 #!/usr/bin/dh-exec
-airtime_mvc/* usr/share/airtime/airtime_mvc/
-vendor/* usr/share/airtime/vendor/
-VERSION usr/share/airtime/
+airtime_mvc/* var/www/libretime/airtime_mvc/
+vendor/* var/www/libretime/vendor/
+VERSION var/www/libretime/
 
 installer/apache/airtime-vhost-2.4 => etc/apache2/sites-available/airtime.conf
 

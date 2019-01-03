@@ -54,7 +54,7 @@ case "$1" in
         # Fill in required details in apache config
         sed -i -e "s@WEB_PORT_LISTEN@@g" \
             -e "s@WEB_PORT@80@g" \
-            -e "s@WEB_ROOT@/usr/share/airtime/airtime_mvc/public/@g" \
+            -e "s@WEB_ROOT@/var/www/libretime/airtime_mvc/public/@g" \
             /etc/apache2/sites-available/airtime.conf
 
         a2enmod rewrite php7.0
