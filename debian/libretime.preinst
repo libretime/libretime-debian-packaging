@@ -1,0 +1,26 @@
+#!/bin/bash
+set -e
+
+case "$!" in
+    install)
+        if [ -d /usr/share/airtime/php/airtime_mvc ]; then
+            echo "WARNING: Replacing existing LibreTime install"
+            echo "Database and audio store will be kept"
+            rm -r /usr/share/airtime/
+            exit 0
+        fi
+    ;;
+
+    upgrade|abort-upgrade)
+        exit 0
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0
