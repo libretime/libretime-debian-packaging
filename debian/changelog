@@ -1,8 +1,12 @@
-libretime (3.0.0~alpha.6-3) UNRELEASED; urgency=medium
+libretime (3.0.0~alpha.7-1ubuntu1) xenial; urgency=medium
 
+  * New upstream version 3.0.0~alpha.7
   * Run airtime-analyzer under www-data
+  * install web ui in web root /var/www/
+  * Add existing install detection
+  * Bump compat level to 4.3.0 (no change)
 
- -- Kyle Robbertze <krobbertze@gmail.com>  Wed, 26 Dec 2018 15:47:50 +0200
+ -- Kyle Robbertze <krobbertze@gmail.com>  Tue, 23 Apr 2019 19:27:08 +0200
 
 libretime (3.0.0~alpha.6-2) xenial; urgency=medium
 
