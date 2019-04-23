@@ -9,5 +9,4 @@ return array(
     $vendorDir . '/phing/phing/classes',
     $vendorDir . '/propel/propel1/runtime/lib',
     $vendorDir . '/propel/propel1/generator/lib',
-    $vendorDir . '/zendframework/zendframework1/library',
 );
