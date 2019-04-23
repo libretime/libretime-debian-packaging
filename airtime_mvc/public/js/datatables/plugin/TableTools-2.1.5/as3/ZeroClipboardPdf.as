@@ -1,4 +1,4 @@
-﻿/* Compile using: mxmlc --target-player=10.0.0 -static-link-runtime-shared-libraries=true -library-path+=lib ZeroClipboardPdf.as */
+/* Compile using: mxmlc --target-player=10.0.0 -static-link-runtime-shared-libraries=true -library-path+=lib ZeroClipboardPdf.as */
 package {
 	import flash.display.Stage;
 	import flash.display.Sprite;

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit87808c45ddaf5b4b77b27833ea289433
+class ComposerStaticInit69620254bbce5c430c1a61639c9d3194
 {
     public static $prefixLengthsPsr4 = array (
         'S' => 
@@ -44,9 +44,129 @@ class ComposerStaticInit87808c45ddaf5b4b77b27833ea289433
     public static $prefixesPsr0 = array (
         'Z' => 
         array (
-            'Zend_' => 
+            'Zend_Xml' => 
             array (
-                0 => __DIR__ . '/..' . '/zendframework/zendframework1/library',
+                0 => __DIR__ . '/..' . '/zf1s/zend-xml/library',
+            ),
+            'Zend_View' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-view/library',
+            ),
+            'Zend_Version' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-version/library',
+            ),
+            'Zend_Validate' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-validate/library',
+            ),
+            'Zend_Uri' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-uri/library',
+            ),
+            'Zend_Session' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-session/library',
+            ),
+            'Zend_Service' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-service/library',
+            ),
+            'Zend_Server' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-server/library',
+            ),
+            'Zend_Rest' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-rest/library',
+            ),
+            'Zend_Registry' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-registry/library',
+            ),
+            'Zend_Navigation' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-navigation/library',
+            ),
+            'Zend_Log' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-log/library',
+            ),
+            'Zend_Locale' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-locale/library',
+            ),
+            'Zend_Loader' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-loader/library',
+            ),
+            'Zend_Layout' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-layout/library',
+            ),
+            'Zend_Json' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-json/library',
+            ),
+            'Zend_Http' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-http/library',
+            ),
+            'Zend_Form' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-form/library',
+            ),
+            'Zend_Filter' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-filter/library',
+            ),
+            'Zend_File_Transfer' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-file-transfer/library',
+            ),
+            'Zend_File' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-file/library',
+            ),
+            'Zend_Exception' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-exception/library',
+            ),
+            'Zend_Db' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-db/library',
+            ),
+            'Zend_Date' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-date/library',
+            ),
+            'Zend_Crypt' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-crypt/library',
+            ),
+            'Zend_Controller' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-controller/library',
+            ),
+            'Zend_Config' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-config/library',
+            ),
+            'Zend_Cache' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-cache/library',
+            ),
+            'Zend_Auth' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-auth/library',
+            ),
+            'Zend_Application' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-application/library',
+            ),
+            'Zend_Acl' => 
+            array (
+                0 => __DIR__ . '/..' . '/zf1s/zend-acl/library',
             ),
         ),
         'S' => 
@@ -122,6 +242,9 @@ class ComposerStaticInit87808c45ddaf5b4b77b27833ea289433
         'AirtimeUpgrader300alpha1' => __DIR__ . '/../..' . '/airtime_mvc/application/upgrade/Upgrades.php',
         'AirtimeUpgrader300alpha6' => __DIR__ . '/../..' . '/airtime_mvc/application/upgrade/Upgrades.php',
         'AirtimeUpgrader300alpha7' => __DIR__ . '/../..' . '/airtime_mvc/application/upgrade/Upgrades.php',
+        'AirtimeUpgrader300alpha7_1' => __DIR__ . '/../..' . '/airtime_mvc/application/upgrade/Upgrades.php',
+        'AirtimeUpgrader300alpha7_2' => __DIR__ . '/../..' . '/airtime_mvc/application/upgrade/Upgrades.php',
+        'AirtimeUpgrader300alpha7_3' => __DIR__ . '/../..' . '/airtime_mvc/application/upgrade/Upgrades.php',
         'Airtime_Decorator_Admin_Only' => __DIR__ . '/../..' . '/airtime_mvc/application/forms/helpers/CustomDecorators.php',
         'Airtime_Decorator_SuperAdmin_Only' => __DIR__ . '/../..' . '/airtime_mvc/application/forms/helpers/CustomDecorators.php',
         'Airtime_View_Helper_IsTrial' => __DIR__ . '/../..' . '/airtime_mvc/application/views/helpers/IsTrial.php',
@@ -187,7 +310,6 @@ class ComposerStaticInit87808c45ddaf5b4b77b27833ea289433
         'Application_Form_StationPodcast' => __DIR__ . '/../..' . '/airtime_mvc/application/forms/StationPodcast.php',
         'Application_Form_StreamSetting' => __DIR__ . '/../..' . '/airtime_mvc/application/forms/StreamSetting.php',
         'Application_Form_StreamSettingSubForm' => __DIR__ . '/../..' . '/airtime_mvc/application/forms/StreamSettingSubForm.php',
-        'Application_Form_SupportSettings' => __DIR__ . '/../..' . '/airtime_mvc/application/forms/SupportSettings.php',
         'Application_Form_TuneInPreferences' => __DIR__ . '/../..' . '/airtime_mvc/application/forms/TuneInPreferences.php',
         'Application_Form_WatchedDirPreferences' => __DIR__ . '/../..' . '/airtime_mvc/application/forms/WatchedDirPreferences.php',
         'Application_Model_Auth' => __DIR__ . '/../..' . '/airtime_mvc/application/models/Auth.php',
@@ -1358,10 +1480,10 @@ class ComposerStaticInit87808c45ddaf5b4b77b27833ea289433
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit87808c45ddaf5b4b77b27833ea289433::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit87808c45ddaf5b4b77b27833ea289433::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit87808c45ddaf5b4b77b27833ea289433::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit87808c45ddaf5b4b77b27833ea289433::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit69620254bbce5c430c1a61639c9d3194::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit69620254bbce5c430c1a61639c9d3194::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit69620254bbce5c430c1a61639c9d3194::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit69620254bbce5c430c1a61639c9d3194::$classMap;
 
         }, null, ClassLoader::class);
     }
