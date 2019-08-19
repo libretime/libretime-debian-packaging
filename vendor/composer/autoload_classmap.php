@@ -99,6 +99,7 @@ return array(
     'Application_Form_ScheduleShow' => $baseDir . '/airtime_mvc/application/forms/ScheduleShow.php',
     'Application_Form_SetupLanguageTimezone' => $baseDir . '/airtime_mvc/application/forms/SetupLanguageTimezone.php',
     'Application_Form_ShowBuilder' => $baseDir . '/airtime_mvc/application/forms/ShowBuilder.php',
+    'Application_Form_ShowListenerStat' => $baseDir . '/airtime_mvc/application/forms/ShowListenerStat.php',
     'Application_Form_SmartBlockCriteria' => $baseDir . '/airtime_mvc/application/forms/SmartBlockCriteria.php',
     'Application_Form_SoundcloudPreferences' => $baseDir . '/airtime_mvc/application/forms/SoundCloudPreferences.php',
     'Application_Form_StationPodcast' => $baseDir . '/airtime_mvc/application/forms/StationPodcast.php',
