@@ -1,3 +1,9 @@
+libretime (3.0.0~alpha.8-1ubuntu3) bionic; urgency=medium
+
+  * Fix php7.2 support (Closes: #9)
+
+ -- Kyle Robbertze <paddatrapper@debian.org>  Tue, 15 Oct 2019 15:06:41 +0200
+
 libretime (3.0.0~alpha.8-1ubuntu2) bionic; urgency=medium
 
   * Drop php version requirements as they are not needed
