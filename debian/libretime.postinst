@@ -2,7 +2,7 @@
 set -e
 
 case "$1" in
-    configure|reconfigure)
+    configure|reconfigure|install)
         if ! getent passwd airtime-playout > /dev/null ; then
             echo 'Adding system user for Libretime Liquidsoap' 1>&2
             adduser \
