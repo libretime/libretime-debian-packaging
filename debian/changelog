@@ -1,3 +1,11 @@
+libretime (3.0.0~alpha.8-1ubuntu4) bionic; urgency=medium
+
+  * Reword preinst error message
+  * Add install argument to postinst script (Closes: #10)
+  * Fix insall script errors (Closes: #13)
+
+ -- Kyle Robbertze <paddatrapper@debian.org>  Tue, 06 Oct 2020 19:04:14 +0200
+
 libretime (3.0.0~alpha.8-1ubuntu3) bionic; urgency=medium
 
   * Fix php7.2 support (Closes: #9)
