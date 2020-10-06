@@ -57,7 +57,7 @@ case "$1" in
             -e "s@WEB_ROOT@/var/www/libretime/airtime_mvc/public/@g" \
             /etc/apache2/sites-available/airtime.conf
 
-        a2enmod rewrite php7.0
+        a2enmod rewrite php7.2
         systemctl restart apache2
 
         su postgres <<'EOF'
