@@ -26,6 +26,8 @@ class ApiController extends Zend_Controller_Action
             "show-tracks",
             "show-schedules",
             "show-logo",
+            "track",
+            "track-types",
             "stream-m3u"
         );
 
@@ -57,7 +59,6 @@ class ApiController extends Zend_Controller_Action
                 ->addActionContext('status'                        , 'json')
                 ->addActionContext('register-component'            , 'json')
                 ->addActionContext('update-liquidsoap-status'      , 'json')
-                ->addActionContext('live-chat'                     , 'json')
                 ->addActionContext('update-file-system-mount'      , 'json')
                 ->addActionContext('handle-watched-dir-missing'    , 'json')
                 ->addActionContext('rabbitmq-do-push'              , 'json')
@@ -295,6 +296,26 @@ class ApiController extends Zend_Controller_Action
                 $result = Application_Model_Schedule::GetPlayOrderRangeOld($limit);
             }
 
+            $stationUrl = Application_Common_HTTPHelper::getStationUrl();
+
+            if (($result["previous"]["type"] != "livestream") && isset($result["previous"]["metadata"])) {
+                $previousID = $result["previous"]["metadata"]["id"];
+                $get_prev_artwork_url = $stationUrl . 'api/track?id='. $previousID .'&return=artwork';
+                $result["previous"]["metadata"]["artwork_url"] = $get_prev_artwork_url;
+            }
+
+            if (($result["current"]["type"] != "livestream") && isset($result["current"]["metadata"])) {
+                $currID = $result["current"]["metadata"]["id"];
+                $get_curr_artwork_url = $stationUrl . 'api/track?id='. $currID .'&return=artwork';
+                $result["current"]["metadata"]["artwork_url"] = $get_curr_artwork_url;
+            }
+
+            if (($result["next"]["type"] != "livestream") && isset($result["next"]["metadata"])) {
+                $nextID = $result["next"]["metadata"]["id"];
+                $get_next_artwork_url = $stationUrl . 'api/track?id='. $nextID .'&return=artwork';
+                $result["next"]["metadata"]["artwork_url"] = $get_next_artwork_url;
+            }
+
             // apply user-defined timezone, or default to station
             Application_Common_DateHelper::convertTimestampsToTimezone(
                 $result['currentShow'],
@@ -517,6 +538,113 @@ class ApiController extends Zend_Controller_Action
             } catch(Exception $e) {
                 throw new ZendActionHttpException($this, 500, "ERROR: " . $e->getMessage());
             }
+        } else {
+            header('HTTP/1.0 401 Unauthorized');
+            print _('You are not allowed to access this resource. ');
+            exit;
+        }
+    }
+
+    /**
+     * New API endpoint to display metadata from any single track
+     *
+     * Find metadata to any track imported (eg. id=1&return=json)
+     *
+     * @param int    $id          track ID
+     * @param string $return      json, artwork_data, or artwork
+     *
+     */
+    public function trackAction()
+    {
+        // Disable the view and the layout
+        $this->view->layout()->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(true);
+
+        if (Application_Model_Preference::GetAllow3rdPartyApi() || $this->checkAuth()) {
+
+            $request = $this->getRequest();
+            $trackid = $request->getParam('id');
+            $return = $request->getParam('return');
+
+            if (empty($return)) {
+                throw new ZendActionHttpException($this, 400, "ERROR: No return was given.");
+            }
+
+            if (empty($trackid)) {
+                throw new ZendActionHttpException($this, 400, "ERROR: No ID was given.");
+            }
+
+            $storDir = Application_Model_MusicDir::getStorDir();
+            $fp = $storDir->getDirectory();
+
+            //$this->view->type = $type;
+            $file = Application_Model_StoredFile::RecallById($trackid);
+            $md = $file->getMetadata();
+
+            if ($return === "artwork-data") {
+                foreach ($md as $key => $value) {
+                    if ($key == 'MDATA_KEY_ARTWORK' && !is_null($value)) {
+                        FileDataHelper::renderDataURI($fp . $md['MDATA_KEY_ARTWORK']);
+                    }
+                }
+            } elseif ($return === "artwork-data-32") {
+                foreach ($md as $key => $value) {
+                    if ($key == 'MDATA_KEY_ARTWORK' && !is_null($value)) {
+                        FileDataHelper::renderDataURI($fp . $md['MDATA_KEY_ARTWORK']. '-32');
+                    }
+                }
+            } elseif ($return === "artwork") {
+                //default
+                foreach ($md as $key => $value) {
+                    if ($key == 'MDATA_KEY_ARTWORK' && !is_null($value)) {
+                        FileDataHelper::renderImage($fp . $md['MDATA_KEY_ARTWORK'].'-512.jpg');
+                    }
+                }
+            } elseif ($return === "artwork-32") {
+                foreach ($md as $key => $value) {
+                    if ($key == 'MDATA_KEY_ARTWORK' && !is_null($value)) {
+                        FileDataHelper::renderImage($fp . $md['MDATA_KEY_ARTWORK'].'-32.jpg');
+                    }
+                }
+            } elseif ($return === "artwork-64") {
+                foreach ($md as $key => $value) {
+                    if ($key == 'MDATA_KEY_ARTWORK' && !is_null($value)) {
+                        FileDataHelper::renderImage($fp . $md['MDATA_KEY_ARTWORK'].'-64.jpg');
+                    }
+                }
+            } elseif ($return === "artwork-128") {
+                foreach ($md as $key => $value) {
+                    if ($key == 'MDATA_KEY_ARTWORK' && !is_null($value)) {
+                        FileDataHelper::renderImage($fp . $md['MDATA_KEY_ARTWORK'].'-128.jpg');
+                    }
+                }
+            } elseif ($return === "artwork-512") {
+                foreach ($md as $key => $value) {
+                    if ($key == 'MDATA_KEY_ARTWORK' && !is_null($value)) {
+                        FileDataHelper::renderImage($fp . $md['MDATA_KEY_ARTWORK'].'-512.jpg');
+                    }
+                }
+            } elseif ($return === "json") {
+                  $data =json_encode($md);
+                  echo $data;
+            }
+
+        } else {
+            header('HTTP/1.0 401 Unauthorized');
+            print _('You are not allowed to access this resource. ');
+            exit;
+        }
+    }
+
+    public function trackTypesAction()
+    {
+        if (Application_Model_Preference::GetAllow3rdPartyApi() || $this->checkAuth()) {
+            // disable the view and the layout
+            $this->view->layout()->disableLayout();
+            $this->_helper->viewRenderer->setNoRender(true);
+
+            $tracktypes = Application_Model_Tracktype::getTracktypes();
+            $this->_helper->json->sendJson($tracktypes);
         } else {
             header('HTTP/1.0 401 Unauthorized');
             print _('You are not allowed to access this resource. ');

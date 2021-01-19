@@ -2,9 +2,9 @@
 
 class Application_Form_EditAudioMD extends Zend_Form
 {
-    
+
     public function init() {}
-    
+
     public function startForm($p_id)
     {
         $baseUrl = Application_Common_OsPath::getBaseDir();
@@ -17,6 +17,34 @@ class Application_Form_EditAudioMD extends Zend_Form
         $file_id->removeDecorator('Label');
         $file_id->setAttrib('class', 'obj_id');
         $this->addElement($file_id);
+
+        // Add artwork hidden field
+        $artwork = new Zend_Form_Element_Hidden('artwork');
+        $artwork->class = 'input_text artwork_'. $p_id;
+        $artwork->setFilters(array('StringTrim'))
+            ->setValidators(array(
+                new Zend_Validate_StringLength(array('max' => 2048))
+            ));
+        $file_id->addDecorator('HtmlTag', array('tag' => 'div', 'style' => 'display:none'));
+        $file_id->removeDecorator('Label');
+        $file_id->setAttrib('class', 'artwork');
+        $this->addElement($artwork);
+
+        // Set artwork hidden field
+        $set_artwork = new Zend_Form_Element_Hidden('set_artwork');
+        $set_artwork->class = 'input_text set_artwork_'. $p_id;
+        $file_id->addDecorator('HtmlTag', array('tag' => 'div', 'style' => 'display:none'));
+        $file_id->removeDecorator('Label');
+        $file_id->setAttrib('class', 'set_artwork');
+        $this->addElement($set_artwork);
+
+        // Remove artwork hidden field
+        $remove_artwork = new Zend_Form_Element_Hidden('remove_artwork');
+        $remove_artwork->class = 'input_text remove_artwork_'. $p_id;
+        $file_id->addDecorator('HtmlTag', array('tag' => 'div', 'style' => 'display:none'));
+        $file_id->removeDecorator('Label');
+        $file_id->setAttrib('class', 'remove_artwork');
+        $this->addElement($remove_artwork);
 
         // Add title field
         $track_title = new Zend_Form_Element_Text('track_title');
@@ -62,6 +90,25 @@ class Application_Form_EditAudioMD extends Zend_Form
         $owner_id->setLabel(_('Owner:'));
         $owner_id->setMultiOptions($user_options);
         $this->addelement($owner_id);
+
+        // Add track type dropdown
+        $track_type_options = array();
+        $track_types = Application_Model_Tracktype::getTracktypes();
+        
+        array_multisort(array_map(function($element) {
+            return $element['type_name'];
+        }, $track_types), SORT_ASC, $track_types);
+        
+        $track_type_options[""] = _('Select a Type');
+        foreach ($track_types as $key => $tt) {
+            $track_type_options[$tt['code']] = $tt['type_name'];
+        }
+
+        $track_type = new Zend_Form_Element_Select('track_type');
+        $track_type->class = 'input_text';
+        $track_type->setLabel(_('Track Type:'));
+        $track_type->setMultiOptions($track_type_options);
+        $this->addelement($track_type);
 
         // Description field
         $description = new Zend_Form_Element_Textarea('description');

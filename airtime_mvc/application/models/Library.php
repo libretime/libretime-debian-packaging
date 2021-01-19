@@ -56,4 +56,20 @@ class Application_Model_Library
 
         return $playlistNames;
     }
+
+    public static function getTracktypes()
+    {
+        $track_type_options = array(NULL  => _("None"));
+        $track_types = Application_Model_Tracktype::getTracktypes();
+        
+        array_multisort(array_map(function($element) {
+            return $element['type_name'];
+        }, $track_types), SORT_ASC, $track_types);
+        
+        foreach ($track_types as $key => $tt) {
+            $track_type_options[$tt['code']] = $tt['type_name'];
+        }
+
+        return $track_type_options;
+    }
 }

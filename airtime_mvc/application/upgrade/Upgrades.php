@@ -239,12 +239,12 @@ abstract class AirtimeUpgrader
     }
 
     protected function _runUpgrade() {
-        passthru("export PGPASSWORD=".$this->password." && psql -h ".$this->host." -U ".$this->username." -q -f ".$this->_dir."/upgrade_sql/airtime_"
+        passthru("export PGPASSWORD=".$this->password." && /usr/bin/psql -h ".$this->host." -U ".$this->username." -q -f ".$this->_dir."/upgrade_sql/airtime_"
                  .$this->getNewVersion()."/upgrade.sql ".$this->database." 2>&1 | grep -v -E \"will create implicit sequence|will create implicit index\"");
     }
 
     protected function _runDowngrade() {
-        passthru("export PGPASSWORD=".$this->password." && psql -h ".$this->host." -U ".$this->username." -q -f ".$this->_dir."/downgrade_sql/airtime_"
+        passthru("export PGPASSWORD=".$this->password." && /usr/bin/psql -h ".$this->host." -U ".$this->username." -q -f ".$this->_dir."/downgrade_sql/airtime_"
                  .$this->getNewVersion()."/downgrade.sql ".$this->database." 2>&1 | grep -v -E \"will create implicit sequence|will create implicit index\"");
     }
 
@@ -284,7 +284,7 @@ class AirtimeUpgrader254 extends AirtimeUpgrader
     {
         return '2.5.4';
     }
-    
+
     protected function _runUpgrade()
     {
         //First, ensure there are no superadmins already.
@@ -350,7 +350,7 @@ class AirtimeUpgrader259 extends AirtimeUpgrader {
             '2.5.5'
         );
     }
-    
+
     public function getNewVersion() {
         return '2.5.9';
     }
@@ -493,7 +493,6 @@ class AirtimeUpgrader2516 extends AirtimeUpgrader
         return '2.5.16';
     }
 }
-
 class AirtimeUpgrader300alpha extends AirtimeUpgrader
 {
     protected function getSupportedSchemaVersions() {
@@ -569,7 +568,7 @@ class AirtimeUpgrader300alpha7_1 extends AirtimeUpgrader
         return '3.0.0-alpha.7.1';
     }
 
-}    
+}
 /**
  * Class AirtimeUpgrader300alpha7-2
  *
@@ -601,4 +600,41 @@ class AirtimeUpgrader300alpha7_3 extends AirtimeUpgrader
     }
 }
 
+class AirtimeUpgrader300alpha9_1 extends AirtimeUpgrader
+{
+    protected function getSupportedSchemaVersions() {
+        return array(
+            '3.0.0-alpha.7.3'
+        );
+    }
 
+    public function getNewVersion() {
+        return '3.0.0-alpha.9.1';
+    }
+}
+
+class AirtimeUpgrader300alpha9_2 extends AirtimeUpgrader
+{
+    protected function getSupportedSchemaVersions() {
+        return array(
+            '3.0.0-alpha.9.1'
+        );
+    }
+
+    public function getNewVersion() {
+        return '3.0.0-alpha.9.2';
+    }
+}
+
+class AirtimeUpgrader200alpha9_3 extends AirtimeUpgrader
+{
+    protected function getSupportedSchemaVersions() {
+        return array(
+            '3.0.0-alpha.9.2'
+        );
+    }
+
+    public function getNewVersion() {
+        return '3.0.0-alpha.9.3';
+    }
+}
