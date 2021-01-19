@@ -1,0 +1,49 @@
+From: Kyle Robbertze <paddatrapper@debian.org>
+Date: Tue, 19 Jan 2021 15:44:42 +0200
+Subject: Fix group name to www-data
+
+---
+ python_apps/airtime_analyzer/install/systemd/libretime-analyzer.service | 2 +-
+ python_apps/pypo/install/systemd/libretime-liquidsoap.service           | 2 +-
+ python_apps/pypo/install/systemd/libretime-playout.service              | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/python_apps/airtime_analyzer/install/systemd/libretime-analyzer.service b/python_apps/airtime_analyzer/install/systemd/libretime-analyzer.service
+index c8983ff..45696d1 100644
+--- a/python_apps/airtime_analyzer/install/systemd/libretime-analyzer.service
++++ b/python_apps/airtime_analyzer/install/systemd/libretime-analyzer.service
+@@ -4,7 +4,7 @@ Description=LibreTime Media Analyzer Service
+ [Service]
+ ExecStart=/usr/bin/airtime_analyzer
+ User=libretime-analyzer
+-Group=libretime-analyzer
++Group=www-data
+ Restart=always
+ 
+ [Install]
+diff --git a/python_apps/pypo/install/systemd/libretime-liquidsoap.service b/python_apps/pypo/install/systemd/libretime-liquidsoap.service
+index 2d7a1ab..9fc1576 100644
+--- a/python_apps/pypo/install/systemd/libretime-liquidsoap.service
++++ b/python_apps/pypo/install/systemd/libretime-liquidsoap.service
+@@ -4,7 +4,7 @@ Description=Libretime Liquidsoap Service
+ [Service]
+ ExecStart=/usr/bin/airtime-liquidsoap
+ User=libretime-playout
+-Group=libretime-playout
++Group=www-data
+ Restart=always
+ 
+ [Install]
+diff --git a/python_apps/pypo/install/systemd/libretime-playout.service b/python_apps/pypo/install/systemd/libretime-playout.service
+index bd86973..4457414 100644
+--- a/python_apps/pypo/install/systemd/libretime-playout.service
++++ b/python_apps/pypo/install/systemd/libretime-playout.service
+@@ -5,7 +5,7 @@ After=network-online.target
+ [Service]
+ ExecStart=/usr/bin/airtime-playout
+ User=libretime-pypo
+-Group=libretime-pypo
++Group=www-data
+ Restart=always
+ 
+ [Install]

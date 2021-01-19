@@ -10,6 +10,6 @@ python_apps/pypo/liquidsoap/airtime-liquidsoap.logrotate etc/logrotate.d/airtime
 
 installer/php/airtime.ini etc/php/7.0/apache2/conf.d/
 
-installer/systemd/*.service lib/systemd/system/
+python_apps/*/install/systemd/*.service lib/systemd/system/
 
 python_apps/pypo/liquidsoap/liquidsoap.cfg etc/airtime/
