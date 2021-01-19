@@ -109,7 +109,6 @@ Depends: adduser,
          unzip,
          vorbisgain,
          vorbis-tools,
-         vorbis-tools,
          zip,
          ${misc:Depends}
 Suggests: icecast2
