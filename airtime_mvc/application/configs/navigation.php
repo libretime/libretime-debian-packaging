@@ -57,12 +57,6 @@ $pages[] = array(
             'module'     => 'default',
             'controller' => 'embeddablewidgets',
             'action'     => 'schedule',
-        ),
-        array(
-            'label'      => _('Facebook'),
-            'module'     => 'default',
-            'controller' => 'embeddablewidgets',
-            'action'     => 'facebook',
         )
     )
 );
@@ -91,6 +85,12 @@ $pages[] = array(
             'controller' => 'user',
             'action'     => 'add-user',
             'resource'   => 'user'
+        ),array(
+            'label'      => _('Track Types'),
+            'module'     => 'default',
+            'controller' => 'tracktype',
+            'action'     => 'add-tracktype',
+            'resource'   => 'tracktype'
         ),
         array(
             'label'      => _('Streams'),
@@ -138,7 +138,7 @@ $pages[] = array(
             'action'     => 'index',
             'resource'   => 'listenerstat'
         ),
-        array(            
+        array(
             'label'      => _('Show Listener Stats'),
             'module'     => 'default',
             'controller' => 'listenerstat',
@@ -148,38 +148,6 @@ $pages[] = array(
 
     )
 );
-if (LIBRETIME_ENABLE_BILLING === true) {
-    $pages[] = array(
-        'label' =>  (Application_Model_Preference::GetPlanLevel()=="trial") ? "<i class='icon-star icon-orange'></i><span style='color: #ff5d1a'>"._('Upgrade')."</span>" : "<i class='icon-briefcase icon-white'></i>"._('Billing'),
-        'controller' => 'billing',
-        'action' => 'upgrade',
-        'resource' => 'billing',
-        'title' => 'Billing',
-        'pages' => array(
-            array(
-                'label' => _('Account Plans'),
-                'module' => 'default',
-                'controller' => 'billing',
-                'action' => 'upgrade',
-                'resource' => 'billing'
-            ),
-            array(
-                'label' => _('Account Details'),
-                'module' => 'default',
-                'controller' => 'billing',
-                'action' => 'client',
-                'resource' => 'billing'
-            ),
-            array(
-                'label' => _('View Invoices'),
-                'module' => 'default',
-                'controller' => 'billing',
-                'action' => 'invoices',
-                'resource' => 'billing'
-            )
-        )
-    );
-}
 $pages[] = array(
     'label'      => _('Help'),
     'controller' => 'dashboard',
@@ -196,23 +164,18 @@ $pages[] = array(
             'resource'   =>    'dashboard'
         ),
         array(
-            'label'      => _('FAQ'),
-            'uri'        => FAQ_URL,
-            'target'     => "_blank"
-        ),
-        array(
             'label'      => _('User Manual'),
             'uri'        => USER_MANUAL_URL,
             'target'     => "_blank"
         ),
         array(
-            'label'     => _('File a Support Ticket'),
-            'uri'       => SUPPORT_TICKET_URL,
+            'label'     => _('Get Help Online'),
+            'uri'       => LIBRETIME_DISCOURSE_URL,
             'target'    => "_blank"
         ),
         array(
-            'label'      => _(sprintf("Help Translate %s", PRODUCT_NAME)),
-            'uri'        => AIRTIME_TRANSIFEX_URL,
+            'label'      => _('Contribute to LibreTime'),
+            'uri'        => LIBRETIME_CONTRIBUTE_URL,
             'target'     => "_blank"
         ),
         array(

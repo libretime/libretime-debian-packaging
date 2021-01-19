@@ -1,33 +1,25 @@
-Welcome to LibreTime
-====================
+---
+layout: home
+title: Home
+linkto: index#get-started
+linktext: Get Libretime
+img: /img/radio-unsplash.jpg
+photocredit: Top photo by <a href="https://unsplash.com/@leowieling?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Leo Wieling</a> on <a href="https://unsplash.com/s/photos/radio?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+actions:
+- title: Stable Release
+  text: The best so far. Just extract and run <code>sudo bash install -fiap</code>.
+  linkto: https://github.com/LibreTime/libretime/releases/download/3.0.0-alpha.8/libretime-3.0.0-alpha.8.tar.gz
+  linktext: Download 3.0-alpha-8
+- title: Rolling Commits
+  text: Want the latest and greatest? Install from the source code.
+  linkto: /install
+  linktext: Install from Source
+---
 
-LibreTime makes it easy to run your own online or terrestrial radio station. Check out some [features](features.md) and [screenshots](features.md#screenshots), then [install it](install.md) and start broadcasting!
+# BROADCAST WITHOUT LIMITS
 
-LibreTime is Free/Libre and Open Source Software (FLOSS). Among other things, this means that you have the freedom to:
+Libretime is an open source radio automation and broadcasting solution helping communities get on-air with ease.
 
-* Run it royalty-free for as long as you like.
-* Read and alter the code that makes it work (or hire someone to do this for you!)
-* Contribute documentation, bug-fixes, etc. so that everyone in the community benefits.
+The platform can be easily deployed on dedicated hardware and VMs, on-prem or in the cloud, "free as in freedom" free.
 
-LibreTime is a fork of AirTime due to stalled development of the FLOSS version. For background on this, see this [open letter to the Airtime community](https://gist.github.com/hairmare/8c03b69c9accc90cfe31fd7e77c3b07d).
-
-If you are end-user of an already installed LibreTime instance we have a number of [tutorials](manual/tutorials/index.md) that can help you learn how to use the software.
-
-We also have [how-to guides](manual/howtos) that contain step-by-step instructions for various common tasks.
-
-There are currently no companies offering turn-key LibreTime hosting so if you are interested in running it you will need to have some familiarity with running a linux server. You can always reach out to help from the community at our [forum](http://discourse.libretime.org)
-
-Getting Started (for Developers and Admins)
----------------
-
-The easiest way to check out LibreTime for yourself is to run a local instance in a virtual machine. Assuming you already have Git, Vagrant and Virtualbox installed, just run:
-
-```bash
-git clone https://github.com/libretime/libretime.git
-cd libretime
-vagrant up ubuntu-bionic
-```
-
-If everything works out, you will find LibreTime on [port 8080](http://localhost:8080), icecast on [port 8000](http://localhost:8000) and the docs on [port 8888](http://localhost:8888).
-
-Of course, this setup isn't appropriate for production use. For that, check out our [installation instructions](install.md). More information on the vagrant setup are in [the docs](vagrant.md).
+Let your station underwrite its own destiny.

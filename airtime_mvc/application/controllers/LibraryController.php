@@ -392,7 +392,23 @@ class LibraryController extends Zend_Controller_Action
             $serialized = array();
             //need to convert from serialized jQuery array.
             foreach ($js as $j) {
-                $serialized[$j["name"]] = $j["value"];
+                //on edit, if no artwork is set and audiofile has image, automatically add it
+                if ($j["name"] == "artwork") {
+                    if ($j["value"] ==  null || $j["value"] ==  ''){
+                        $serialized["artwork"] = FileDataHelper::resetArtwork($file_id);
+                    }
+                } elseif ($j["name"] == "set_artwork") {
+                    if ($j["value"] !=  null || $j["value"] !=  ''){
+                        $serialized["artwork"] = FileDataHelper::setArtwork($file_id, $j["value"] );
+                    }
+                } elseif ($j["name"] == "remove_artwork") {
+                    if ($j["value"] ==  1){
+                        $remove_artwork = true;
+                        $serialized["artwork"] = FileDataHelper::removeArtwork($file_id);
+                    }
+                } else {
+                   $serialized[$j["name"]] = $j["value"];
+                }
             }
 
             // Sanitize any wildly incorrect metadata before it goes to be validated.
@@ -409,6 +425,9 @@ class LibraryController extends Zend_Controller_Action
         $this->view->form = $form;
         $this->view->id = $file_id;
         $this->view->title = $file->getPropelOrm()->getDbTrackTitle();
+        $this->view->artist_name = $file->getPropelOrm()->getDbArtistName();
+        $this->view->filePath = $file->getPropelOrm()->getDbFilepath();
+        $this->view->artwork = $file->getPropelOrm()->getDbArtwork();
         $this->view->html = $this->view->render('library/edit-file-md.phtml');
     }
 
@@ -485,13 +504,6 @@ class LibraryController extends Zend_Controller_Action
 
     public function publishDialogAction() {
         $this->_helper->layout->disableLayout();
-
-
-        if (LIBRETIME_ENABLE_BILLING === true && !Billing::isStationPodcastAllowed()) {
-            $this->renderScript("podcast/featureupgrade-pane.phtml");
-        }
-
-
         //This just spits out publish-dialog.phtml!
     }
 }

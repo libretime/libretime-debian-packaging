@@ -96,12 +96,32 @@ CREATE TABLE "cc_files"
     "is_playlist" BOOLEAN DEFAULT 'f',
     "filesize" INTEGER DEFAULT 0 NOT NULL,
     "description" VARCHAR(512),
+    "artwork" VARCHAR(512),
+    "track_type" VARCHAR(16),
     PRIMARY KEY ("id")
 );
 
 CREATE INDEX "cc_files_md5_idx" ON "cc_files" ("md5");
 
 CREATE INDEX "cc_files_name_idx" ON "cc_files" ("name");
+
+-----------------------------------------------------------------------
+-- cc_track_types
+-----------------------------------------------------------------------
+
+DROP TABLE IF EXISTS "cc_track_types" CASCADE;
+
+CREATE TABLE "cc_track_types"
+(
+    "id" serial NOT NULL,
+    "code" VARCHAR(16) DEFAULT '' NOT NULL,
+    "type_name" VARCHAR(64) DEFAULT '' NOT NULL,
+    "description" VARCHAR(255) DEFAULT '' NOT NULL,
+    "visibility" boolean DEFAULT true NOT NULL,
+    PRIMARY KEY ("id"),
+    CONSTRAINT "cc_track_types_id_idx" UNIQUE ("id"),
+    CONSTRAINT "cc_track_types_code_idx" UNIQUE ("code")
+);
 
 -----------------------------------------------------------------------
 -- cloud_file
@@ -407,23 +427,6 @@ CREATE TABLE "cc_sess"
 CREATE INDEX "cc_sess_login_idx" ON "cc_sess" ("login");
 
 CREATE INDEX "cc_sess_userid_idx" ON "cc_sess" ("userid");
-
------------------------------------------------------------------------
--- cc_smemb
------------------------------------------------------------------------
-
-DROP TABLE IF EXISTS "cc_smemb" CASCADE;
-
-CREATE TABLE "cc_smemb"
-(
-    "id" INTEGER NOT NULL,
-    "uid" INTEGER DEFAULT 0 NOT NULL,
-    "gid" INTEGER DEFAULT 0 NOT NULL,
-    "level" INTEGER DEFAULT 0 NOT NULL,
-    "mid" INTEGER,
-    PRIMARY KEY ("id"),
-    CONSTRAINT "cc_smemb_id_idx" UNIQUE ("id")
-);
 
 -----------------------------------------------------------------------
 -- cc_subjs

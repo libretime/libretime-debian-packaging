@@ -704,26 +704,6 @@ msgstr "History Templates"
 msgid "Listener Stats"
 msgstr "Listener Stats"
 
-#: airtime_mvc/application/configs/navigation.php:144
-msgid "Upgrade"
-msgstr ""
-
-#: airtime_mvc/application/configs/navigation.php:144
-msgid "Billing"
-msgstr "Billing"
-
-#: airtime_mvc/application/configs/navigation.php:151
-msgid "Account Plans"
-msgstr "Account Plans"
-
-#: airtime_mvc/application/configs/navigation.php:158
-msgid "Account Details"
-msgstr "Account Details"
-
-#: airtime_mvc/application/configs/navigation.php:165
-msgid "View Invoices"
-msgstr "View Invoices"
-
 #: airtime_mvc/application/configs/navigation.php:175
 #: airtime_mvc/application/views/scripts/error/error-400.phtml:13
 #: airtime_mvc/application/views/scripts/error/error-403.phtml:13
@@ -746,8 +726,8 @@ msgid "User Manual"
 msgstr "User Manual"
 
 #: airtime_mvc/application/configs/navigation.php:200
-msgid "File a Support Ticket"
-msgstr "File a Support Ticket"
+msgid "Get Help Online"
+msgstr "Get Help Online"
 
 #: airtime_mvc/application/configs/navigation.php:210
 msgid "What's New?"
@@ -799,19 +779,19 @@ msgstr "You don't have permission to switch source."
 msgid ""
 "To configure and use the embeddable player you must:<br><br>\n"
 "            1. Enable at least one MP3, AAC, or OGG stream under Settings -> Streams<br>\n"
-"            2. Enable the Public Airtime API under Settings -> Preferences"
+"            2. Enable the Public LibreTime API under Settings -> Preferences"
 msgstr ""
 
 #: airtime_mvc/application/controllers/EmbeddablewidgetsController.php:41
 msgid ""
 "To use the embeddable weekly schedule widget you must:<br><br>\n"
-"            Enable the Public Airtime API under Settings -> Preferences"
+"            Enable the Public LibreTime API under Settings -> Preferences"
 msgstr ""
 
 #: airtime_mvc/application/controllers/EmbeddablewidgetsController.php:53
 msgid ""
 "To add the Radio Tab to your Facebook Page, you must first:<br><br>\n"
-"            Enable the Public Airtime API under Settings -> Preferences"
+"            Enable the Public LibreTime API under Settings -> Preferences"
 msgstr ""
 
 #: airtime_mvc/application/controllers/ErrorController.php:87
@@ -2559,7 +2539,7 @@ msgid "Add Autoloading Playlist ?"
 msgstr ""
 
 #: airtime_mvc/application/views/scripts/form/add-show-autoplaylist.phtml:14 
-msgid "Autoloading playlists' contents are added to shows one hour before the show airs. <a target='_blank' href='http://libretime.org/manual/calendar/#autoloading-playlist'>More information</a>" 
+msgid "Autoloading playlists' contents are added to shows one hour before the show airs. <a target='_blank' href='http://libretime.org/docs/playlists'>More information</a>" 
 msgstr "" 
 
 #: airtime_mvc/application/forms/AddShowAutoPlaylist.php:25
@@ -2876,50 +2856,6 @@ msgstr "User Type:"
 #: airtime_mvc/application/forms/EditUser.php:154
 msgid "Login name is not unique."
 msgstr "Login name is not unique."
-
-#: airtime_mvc/application/forms/BillingClient.php:125
-msgid "What is the name of your favorite childhood friend?"
-msgstr "What was the name of your favourite childhood friend?"
-
-#: airtime_mvc/application/forms/BillingClient.php:126
-msgid "What school did you attend for sixth grade?"
-msgstr "Which school did you attend when you were twelve years old?"
-
-#: airtime_mvc/application/forms/BillingClient.php:127
-msgid "In what city did you meet your spouse/significant other?"
-msgstr "In which city, town or village did you meet the love of your life?"
-
-#: airtime_mvc/application/forms/BillingClient.php:128
-msgid "What street did you live on in third grade?"
-msgstr "Which road did you live on when you were in primary school?"
-
-#: airtime_mvc/application/forms/BillingClient.php:129
-msgid "What is the first name of the boy or girl that you first kissed?"
-msgstr "What was the first name of the first boy or girl that you kissed?"
-
-#: airtime_mvc/application/forms/BillingClient.php:130
-msgid "In what city or town was your first job?"
-msgstr "In which city or town did you have your first job?"
-
-#: airtime_mvc/application/forms/BillingUpgradeDowngrade.php:19
-msgid "Plan type:"
-msgstr "Plan type:"
-
-#: airtime_mvc/application/forms/BillingUpgradeDowngrade.php:31
-msgid "Billing cycle:"
-msgstr "Billing cycle:"
-
-#: airtime_mvc/application/forms/BillingUpgradeDowngrade.php:39
-msgid "Payment method:"
-msgstr "Payment method:"
-
-#: airtime_mvc/application/forms/BillingUpgradeDowngrade.php:42
-msgid "PayPal"
-msgstr "PayPal"
-
-#: airtime_mvc/application/forms/BillingUpgradeDowngrade.php:43
-msgid "Credit Card via 2Checkout"
-msgstr "Credit Card via 2Checkout"
 
 #: airtime_mvc/application/forms/customvalidators/ConditionalNotEmpty.php:32
 #: airtime_mvc/application/forms/helpers/ValidationTypes.php:8
@@ -4330,11 +4266,6 @@ msgstr "Choose Show Instance"
 msgid "Find"
 msgstr "Find"
 
-#: airtime_mvc/application/views/scripts/form/edit-user.phtml:7
-#, php-format
-msgid "<b>Note:</b> Since you're the station owner, your account information can be edited in <a href=\"%s\">Billing Settings</a> instead."
-msgstr "<b>Note:</b> Since you're the station owner, your account information can be edited in <a href=\"%s\">Billing Settings</a> instead."
-
 #: airtime_mvc/application/views/scripts/form/login.phtml:41
 msgid "Forgot your password?"
 msgstr "Forgot your password?"
@@ -5079,11 +5010,6 @@ msgstr "Last Name"
 msgid "User Type"
 msgstr "User Type"
 
-#: airtime_mvc/application/views/scripts/user/add-user.phtml:31
-#, php-format
-msgid "Super Admin details can be changed in your <a href=\"%s\">Billing Settings</a>."
-msgstr "Super Admin details can be changed in your <a href=\"%s\">Billing Settings</a>."
-
 #: airtime_mvc/application/views/scripts/webstream/webstream.phtml:30
 msgid "Stream URL:"
 msgstr "Stream URL:"
@@ -5118,18 +5044,18 @@ msgstr "Couldn't connect to RabbitMQ server! Please check if the server is runni
 #~ msgid ""
 #~ "To configure and use the embeddable player you must:<br><br>\n"
 #~ "            1. Enable at least one MP3, AAC, or OGG stream under System -> Streams<br>\n"
-#~ "            2. Enable the Public Airtime API under System -> Preferences"
+#~ "            2. Enable the Public LibreTime API under System -> Preferences"
 #~ msgstr ""
 #~ "To configure and use the embeddable player you must:<br><br>\n"
 #~ "            1. Enable at least one MP3, AAC, or OGG stream under System -> Streams<br>\n"
-#~ "            2. Enable the Public Airtime API under System -> Preferences"
+#~ "            2. Enable the Public LibreTime API under System -> Preferences"
 
 #~ msgid ""
 #~ "To use the embeddable weekly schedule widget you must:<br><br>\n"
-#~ "            Enable the Public Airtime API under System -> Preferences"
+#~ "            Enable the Public LibreTime API under System -> Preferences"
 #~ msgstr ""
 #~ "To use the embeddable weekly schedule widget you must:<br><br>\n"
-#~ "            Enable the Public Airtime API under System -> Preferences"
+#~ "            Enable the Public LibreTime API under System -> Preferences"
 
 #~ msgid "please put in a time in seconds '00 (.0)'"
 #~ msgstr "please put in a time in seconds '00 (.0)'"
