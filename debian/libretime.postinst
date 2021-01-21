@@ -57,7 +57,11 @@ case "$1" in
             -e "s@WEB_ROOT@/var/www/libretime/airtime_mvc/public/@g" \
             /etc/apache2/sites-available/airtime.conf
 
-        a2enmod rewrite php7.2
+        if -f /usr/bin/php7.2 ; then
+            a2enmod rewrite php7.2
+        else
+            a2enmod rewrite php7.0
+        fi
         systemctl restart apache2
 
         su postgres <<'EOF'
@@ -65,8 +69,8 @@ case "$1" in
                 count=$(psql -d postgres -tAc "SELECT count(*) FROM pg_roles WHERE rolname='airtime';")
                 if [[ $count -eq 0 ]]; then
                     psql -d postgres -tAc "CREATE USER airtime WITH ENCRYPTED PASSWORD 'airtime'; ALTER USER airtime CREATEDB;"
-                    [[ $? -eq 0 ]] && 
-                          echo "Created airtime user in PostgreSQL" || 
+                    [[ $? -eq 0 ]] &&
+                          echo "Created airtime user in PostgreSQL" ||
                           echo "$0:${FUNCNAME}(): ERROR: Can't create airtime user in PostgreSQL!"
                 else
                     echo "airtime user already exists in PostgreSQL"
@@ -87,7 +91,6 @@ EOF
         rabbitmqctl set_permissions -p /airtime airtime .\* .\* .\*
 
         pip install celery==3.1.26.post2
-        pip install soundcloud
 
         ip_device="enp0s8"
         IP=$(ifconfig ${ip_device} 2>/dev/null |awk -F'[ :]+' '/inet addr:/ {print $4}')
