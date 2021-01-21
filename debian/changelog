@@ -1,3 +1,12 @@
+libretime (3.0.0~alpha.9-1~ltppa1) xenial; urgency=medium
+
+  * New upstream version 3.0.0~alpha.9
+  * Bump python dependencies to python3
+  * Refresh patches
+  * Remove duplicate depend entry
+
+ -- Kyle Robbertze <paddatrapper@debian.org>  Tue, 19 Jan 2021 16:40:44 +0200
+
 libretime (3.0.0~alpha.8-1ubuntu4) bionic; urgency=medium
 
   * Reword preinst error message
