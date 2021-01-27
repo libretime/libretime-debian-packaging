@@ -90,7 +90,8 @@ EOF
         fi
         rabbitmqctl set_permissions -p /airtime airtime .\* .\* .\*
 
-        pip install celery==3.1.26.post2
+        pip3 install celery==3.1.26.post2
+        pip3 install rgain3
 
         ip_device="enp0s8"
         IP=$(ifconfig ${ip_device} 2>/dev/null |awk -F'[ :]+' '/inet addr:/ {print $4}')
