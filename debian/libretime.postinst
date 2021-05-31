@@ -56,11 +56,12 @@ case "$1" in
             -e "s@WEB_PORT@80@g" \
             -e "s@WEB_ROOT@/var/www/libretime/airtime_mvc/public/@g" \
             /etc/apache2/sites-available/airtime.conf
-
-        if -f /usr/bin/php7.2 ; then
+        if [[ -f /usr/bin/php7.2 ]]; then
             a2enmod rewrite php7.2
-        else
+        elif [[ -f /usr/bin/php7.0 ]]; then
             a2enmod rewrite php7.0
+        else
+            echo "Not enabling PHP, this needs doing manually"
         fi
         systemctl restart apache2
 
@@ -84,14 +85,13 @@ EOF
         RESULT="$?"
         set -e
         # Only run these if the vhost doesn't exist
-        if [ "$RESULT" != "0" ]; then
+        if [[ "$RESULT" != "0" ]]; then
             rabbitmqctl add_vhost /airtime
             rabbitmqctl add_user airtime airtime
         fi
         rabbitmqctl set_permissions -p /airtime airtime .\* .\* .\*
 
-        pip3 install celery==3.1.26.post2
-        pip3 install rgain3
+        pip3 install rgain3==1.0.0
 
         ip_device="enp0s8"
         IP=$(ifconfig ${ip_device} 2>/dev/null |awk -F'[ :]+' '/inet addr:/ {print $4}')
@@ -102,7 +102,7 @@ EOF
         echo    " To get started with Airtime, visit ${IP}            "
         echo    " or, if you've set up your own web configuration,    "
         echo    " the Airtime webroot on your webserver               "
-        echo "-----------------------------------------------------"
+        echo    "-----------------------------------------------------"
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
